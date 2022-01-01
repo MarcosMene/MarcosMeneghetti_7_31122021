@@ -1,0 +1,22 @@
+{
+  "name": "p7_meneghetti_marcos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosMene/MarcosMeneghetti_7_31122021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosMene/MarcosMeneghetti_7_31122021/issues"
+  },
+  "homepage": "https://github.com/MarcosMene/MarcosMeneghetti_7_31122021#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
