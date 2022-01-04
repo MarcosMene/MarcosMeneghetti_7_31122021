@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato:wght@100&display=swap');
-
-// heading custom 
-$headings-font-family: "DM Sans",
-sans-serif;
-$headings-color: #d04f4f;
-$h1-font-size: 38px;
-$headings-font-weight: bold;
-
 // input custom 
 $input-btn-font-family: "Lato";
 $input-btn-font-size: 18px;
@@ -14,3 +5,27 @@ $input-font-weight:bold;
 $input-bg: #e7e7e7;
 $input-group-addon-bg:#e7e7e7;
 $input-border-color:#e7e7e7;
+
+
+
+//buttom custom
+$btn-font-family:"Lato";
+$btn-font-weight:bold;
+
+
+// color custom 
+$blue: #3282f7;
+$red: #ed6454;
+$green: #68d9a4;
+
+
+
+// $dropdown-link-color
+$dropdown-link-hover-bg: transparent;
+
+//arrow dropdown menu hide
+.dropdown-toggle::after {
+    display: none;
+}
+
+$dropdown-item-padding-x:10px;
