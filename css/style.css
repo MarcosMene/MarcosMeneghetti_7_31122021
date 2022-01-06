@@ -11157,6 +11157,11 @@ h2, .h2 {
   font-size: 14px;
 }
 
+label {
+  font-family: "Lato";
+  font-size: 18px;
+}
+
 .card {
   font-family: "Lato";
 }
@@ -11212,9 +11217,11 @@ input {
   display: flex;
   align-items: center;
   position: relative;
+  width: 185px;
   border-radius: 0.25rem;
   margin-right: 20px;
   color: #fff;
+  transition: width 0.2s ease-in-out;
 }
 .search-buttons .search-wrapper-ingredients .search-control-ingredients,
 .search-buttons .search-wrapper-ingredients .search-control-appareils,
@@ -11240,7 +11247,7 @@ input {
 .search-buttons .search-wrapper-ustensiles .close-dropdown-ingredients,
 .search-buttons .search-wrapper-ustensiles .close-dropdown-appareils,
 .search-buttons .search-wrapper-ustensiles .close-dropdown-ustensiles {
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   margin: 0 10px;
   z-index: 600;
   cursor: pointer;
@@ -11256,7 +11263,6 @@ input {
 .search-buttons .search-wrapper-ustensiles .appareils-text,
 .search-buttons .search-wrapper-ustensiles .ustensiles-text {
   pointer-events: none;
-  font-size: 18px;
 }
 .search-buttons .search-wrapper-ingredients input,
 .search-buttons .search-wrapper-appareils input,
@@ -11266,11 +11272,6 @@ input {
   background-color: transparent;
   border: none;
   color: #fff;
-}
-.search-buttons .search-wrapper-ingredients input:focus .search-wrapper,
-.search-buttons .search-wrapper-appareils input:focus .search-wrapper,
-.search-buttons .search-wrapper-ustensiles input:focus .search-wrapper {
-  width: 20rem;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appareils .search-list-block-ingredients,

@@ -36,6 +36,11 @@ h2 {
     font-size: 14px;
 }
 
+label {
+    font-family: "Lato";
+    font-size: 18px;
+}
+
 
 
 .card {
@@ -105,11 +110,11 @@ input {
         display: flex;
         align-items: center;
         position: relative;
-
+        width: 185px;
         border-radius: 0.25rem;
         margin-right: 20px;
         color: #fff;
-
+        transition: width .2s ease-in-out;
 
 
 
@@ -128,7 +133,7 @@ input {
         .close-dropdown-appareils,
         .close-dropdown-ustensiles {
 
-            transition: all 0.1s ease-in-out;
+            transition: all .2s ease-in-out;
             margin: 0 10px;
             z-index: 600;
             cursor: pointer;
@@ -139,7 +144,7 @@ input {
         .appareils-text,
         .ustensiles-text {
             pointer-events: none;
-            font-size: 18px;
+
         }
 
         input {
@@ -150,9 +155,6 @@ input {
             color: #fff;
         }
 
-        input:focus .search-wrapper {
-            width: 20rem;
-        }
 
 
         .search-list-block-ingredients {

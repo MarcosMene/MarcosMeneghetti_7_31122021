@@ -1,122 +1,176 @@
 // Ingredients
-const searchIngredients = document.querySelector(".search-wrapper-ingredients");
-const searchControlIngredients = document.querySelector(
-  ".search-control-ingredients"
-);
-const searchIngredientsText = document.querySelector(".ingredients-text");
 const searchIngredientsInput = document.querySelector("#ingredients");
+const searchIngredientsLabelInput = document.querySelector(
+  ".search-control-ingredients label"
+);
 const searchIngredientsExpand = document.querySelector(
   ".close-dropdown-ingredients"
 );
 const searchListBlockIngredients = document.querySelector(
   ".search-list-block-ingredients"
 );
-// click button
-searchControlIngredients.addEventListener("click", () => {
-  searchIngredientsInput.classList.toggle("hide");
-  searchIngredientsText.classList.toggle("hide");
-  searchListBlockIngredients.classList.toggle("hide");
-  searchIngredientsInput.focus();
-  searchIngredientsExpand.classList.toggle("rotated");
+const searchIngredients = document.querySelector(".search-wrapper-ingredients");
+
+// click input Ingredients
+searchIngredientsInput.addEventListener("click", () => {
+  searchIngredientsInput.classList.remove("hide");
+  searchIngredientsLabelInput.classList.add("hide");
 });
 
-// click arrow button
-searchIngredientsExpand.addEventListener("click", () => {
-  searchIngredientsInput.classList.remove("hide");
-  searchIngredientsText.classList.add("hide");
+// input focus Ingredients
+searchIngredientsInput.addEventListener("focus", () => {
   searchListBlockIngredients.classList.remove("hide");
   searchIngredientsExpand.classList.add("rotated");
+});
+
+// click arrow button Ingredients
+searchIngredientsExpand.addEventListener("click", () => {
+  searchListBlockIngredients.classList.remove("hide");
+  searchIngredientsInput.classList.remove("hide");
+  searchIngredientsLabelInput.classList.add("hide");
   searchIngredients.classList.toggle("w-50");
   searchIngredientsInput.classList.toggle("w-100");
   searchListBlockIngredients.classList.toggle("w-100");
-  searchListBlockIngredients.classList.toggle("flex-expand");
-  searchListBlockIngredients.classList.toggle("height-dropdown-list");
+
+  searchIngredientsExpand.classList.add("rotated");
   searchIngredientsInput.focus();
 });
 
-// click input
-searchIngredientsInput.addEventListener("click", (e) => {
-  e.stopImmediatePropagation();
+// click outside div button ingredients
+document.addEventListener("click", (evt) => {
+  let targetEl = evt.target; // clicked element
+  do {
+    if (targetEl == searchIngredients) {
+      return;
+    }
+    // Go up the DOM ingredients
+    targetEl = targetEl.parentNode;
+  } while (targetEl);
+  // click outside ingredients
+  searchIngredientsInput.classList.add("hide");
+  searchIngredientsInput.value = "";
+  searchIngredientsLabelInput.classList.remove("hide");
+  searchListBlockIngredients.classList.add("hide");
+  searchIngredientsExpand.classList.remove("rotated");
+  searchIngredients.classList.remove("w-50");
+  searchIngredientsInput.classList.remove("w-100");
+  searchListBlockIngredients.classList.remove("w-100");
 });
 
-// Appareils
-const searchAppareils = document.querySelector(".search-wrapper-appareils");
-const searchControlAppareils = document.querySelector(
-  ".search-control-appareils"
-);
-const searchAppareilsText = document.querySelector(".appareils-text");
+// Appareil
 const searchAppareilsInput = document.querySelector("#appareils");
+const searchAppareilsLabelInput = document.querySelector(
+  ".search-control-appareils label"
+);
 const searchAppareilsExpand = document.querySelector(
   ".close-dropdown-appareils"
 );
 const searchListBlockAppareils = document.querySelector(
   ".search-list-block-appareils"
 );
-// click button
-searchControlAppareils.addEventListener("click", () => {
-  searchAppareilsInput.classList.toggle("hide");
-  searchAppareilsText.classList.toggle("hide");
-  searchListBlockAppareils.classList.toggle("hide");
-  searchAppareilsInput.focus();
-  searchAppareilsExpand.classList.toggle("rotated");
+const searchAppareils = document.querySelector(".search-wrapper-appareils");
+
+// click input Appareil
+searchAppareilsInput.addEventListener("click", () => {
+  searchAppareilsInput.classList.remove("hide");
+  searchAppareilsLabelInput.classList.add("hide");
 });
 
-// click arrow button
-searchAppareilsExpand.addEventListener("click", () => {
-  searchAppareilsInput.classList.remove("hide");
-  searchAppareilsText.classList.add("hide");
+// input focus Appareil
+searchAppareilsInput.addEventListener("focus", () => {
   searchListBlockAppareils.classList.remove("hide");
   searchAppareilsExpand.classList.add("rotated");
+});
+
+// click arrow button Appareil
+searchAppareilsExpand.addEventListener("click", () => {
+  searchListBlockAppareils.classList.remove("hide");
+  searchAppareilsInput.classList.remove("hide");
+  searchAppareilsLabelInput.classList.add("hide");
   searchAppareils.classList.toggle("w-50");
   searchAppareilsInput.classList.toggle("w-100");
   searchListBlockAppareils.classList.toggle("w-100");
-  searchListBlockAppareils.classList.toggle("flex-expand");
-  searchListBlockAppareils.classList.toggle("height-dropdown-list");
+
+  searchAppareilsExpand.classList.add("rotated");
   searchAppareilsInput.focus();
 });
 
-// click input
-searchAppareilsInput.addEventListener("click", (e) => {
-  e.stopImmediatePropagation();
+// click outside div button Appareil
+document.addEventListener("click", (evt) => {
+  let targetEl = evt.target; // clicked element
+  do {
+    if (targetEl == searchAppareils) {
+      return;
+    }
+    // Go up the DOM Appareil
+    targetEl = targetEl.parentNode;
+  } while (targetEl);
+  // click outside Appareil
+  searchAppareilsInput.classList.add("hide");
+  searchAppareilsInput.value = "";
+  searchAppareilsLabelInput.classList.remove("hide");
+  searchListBlockAppareils.classList.add("hide");
+  searchAppareilsExpand.classList.remove("rotated");
+  searchAppareils.classList.remove("w-50");
+  searchAppareilsInput.classList.remove("w-100");
+  searchListBlockAppareils.classList.remove("w-100");
 });
 
 // Ustensiles
-const searchUstensiles = document.querySelector(".search-wrapper-ustensiles");
-const searchControlUstensiles = document.querySelector(
-  ".search-control-ustensiles"
-);
-const searchUstensilesText = document.querySelector(".ustensiles-text");
 const searchUstensilesInput = document.querySelector("#ustensiles");
+const searchUstensilesLabelInput = document.querySelector(
+  ".search-control-ustensiles label"
+);
 const searchUstensilesExpand = document.querySelector(
   ".close-dropdown-ustensiles"
 );
 const searchListBlockUstensiles = document.querySelector(
   ".search-list-block-ustensiles"
 );
-// click button
-searchControlUstensiles.addEventListener("click", () => {
-  searchUstensilesInput.classList.toggle("hide");
-  searchUstensilesText.classList.toggle("hide");
-  searchListBlockUstensiles.classList.toggle("hide");
-  searchUstensilesInput.focus();
-  searchUstensilesExpand.classList.toggle("rotated");
+const searchUstensiles = document.querySelector(".search-wrapper-ustensiles");
+
+// click input Ustensiles
+searchUstensilesInput.addEventListener("click", () => {
+  searchUstensilesInput.classList.remove("hide");
+  searchUstensilesLabelInput.classList.add("hide");
 });
 
-// click arrow button
-searchUstensilesExpand.addEventListener("click", () => {
-  searchUstensilesInput.classList.remove("hide");
-  searchUstensilesText.classList.add("hide");
+// input focus Ustensiles
+searchUstensilesInput.addEventListener("focus", () => {
   searchListBlockUstensiles.classList.remove("hide");
   searchUstensilesExpand.classList.add("rotated");
+});
+
+// click arrow button Ustensiles
+searchUstensilesExpand.addEventListener("click", () => {
+  searchListBlockUstensiles.classList.remove("hide");
+  searchUstensilesInput.classList.remove("hide");
+  searchUstensilesLabelInput.classList.add("hide");
   searchUstensiles.classList.toggle("w-50");
   searchUstensilesInput.classList.toggle("w-100");
   searchListBlockUstensiles.classList.toggle("w-100");
-  searchListBlockUstensiles.classList.toggle("flex-expand");
-  searchListBlockUstensiles.classList.toggle("height-dropdown-list");
+
+  searchUstensilesExpand.classList.add("rotated");
   searchUstensilesInput.focus();
 });
 
-// click input
-searchUstensilesInput.addEventListener("click", (e) => {
-  e.stopImmediatePropagation();
+// click outside div button Ustensiles
+document.addEventListener("click", (evt) => {
+  let targetEl = evt.target; // clicked element
+  do {
+    if (targetEl == searchUstensiles) {
+      return;
+    }
+    // Go up the DOM Ustensiles
+    targetEl = targetEl.parentNode;
+  } while (targetEl);
+  // click outside Ustensiles
+  searchUstensilesInput.classList.add("hide");
+  searchUstensilesInput.value = "";
+  searchUstensilesLabelInput.classList.remove("hide");
+  searchListBlockUstensiles.classList.add("hide");
+  searchUstensilesExpand.classList.remove("rotated");
+  searchUstensiles.classList.remove("w-50");
+  searchUstensilesInput.classList.remove("w-100");
+  searchListBlockUstensiles.classList.remove("w-100");
 });
