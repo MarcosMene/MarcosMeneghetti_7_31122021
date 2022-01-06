@@ -25,6 +25,12 @@
     transform: rotate(180deg);
 }
 
+
+
+
+
+
+
 h1 {
     font-family: "DM Sans", sans-serif;
     color: #d04f4f;
@@ -182,9 +188,9 @@ input {
             padding: 10px 30px;
             height: 300px;
             overflow-y: scroll;
-
-
+            transition: width .2s ease-in-out;
         }
+
 
         .search-list-block-ingredients {
             scrollbar-color: blue $primary;
@@ -206,10 +212,16 @@ input {
         }
 
         .search-list-ingredients,
-        .search-list-appareil,
+        .search-list-appareils,
         .search-list-ustensiles {
             width: 100%;
             margin-right: 40px;
+            display: grid;
+            grid-template-columns: auto;
+        }
+
+        .expand-search-list {
+            grid-template-columns: auto auto auto;
         }
 
         ul {

@@ -11305,6 +11305,7 @@ input {
   padding: 10px 30px;
   height: 300px;
   overflow-y: scroll;
+  transition: width 0.2s ease-in-out;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appareils .search-list-block-ingredients,
@@ -11325,16 +11326,23 @@ input {
   scrollbar-width: thin;
 }
 .search-buttons .search-wrapper-ingredients .search-list-ingredients,
-.search-buttons .search-wrapper-ingredients .search-list-appareil,
+.search-buttons .search-wrapper-ingredients .search-list-appareils,
 .search-buttons .search-wrapper-ingredients .search-list-ustensiles,
 .search-buttons .search-wrapper-appareils .search-list-ingredients,
-.search-buttons .search-wrapper-appareils .search-list-appareil,
+.search-buttons .search-wrapper-appareils .search-list-appareils,
 .search-buttons .search-wrapper-appareils .search-list-ustensiles,
 .search-buttons .search-wrapper-ustensiles .search-list-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-list-appareil,
+.search-buttons .search-wrapper-ustensiles .search-list-appareils,
 .search-buttons .search-wrapper-ustensiles .search-list-ustensiles {
   width: 100%;
   margin-right: 40px;
+  display: grid;
+  grid-template-columns: auto;
+}
+.search-buttons .search-wrapper-ingredients .expand-search-list,
+.search-buttons .search-wrapper-appareils .expand-search-list,
+.search-buttons .search-wrapper-ustensiles .expand-search-list {
+  grid-template-columns: auto auto auto;
 }
 .search-buttons .search-wrapper-ingredients ul,
 .search-buttons .search-wrapper-appareils ul,

@@ -1,4 +1,5 @@
 // Ingredients
+const searchIngredients = document.querySelector(".search-wrapper-ingredients");
 const searchIngredientsInput = document.querySelector("#ingredients");
 const searchIngredientsLabelInput = document.querySelector(
   ".search-control-ingredients label"
@@ -9,7 +10,11 @@ const searchIngredientsExpand = document.querySelector(
 const searchListBlockIngredients = document.querySelector(
   ".search-list-block-ingredients"
 );
-const searchIngredients = document.querySelector(".search-wrapper-ingredients");
+
+const searchListIngredients = document.querySelector(
+  ".search-list-ingredients"
+);
+searchListIngredients.classList.remove("expand-search-list");
 
 // click input Ingredients
 searchIngredientsInput.addEventListener("click", () => {
@@ -31,8 +36,9 @@ searchIngredientsExpand.addEventListener("click", () => {
   searchIngredients.classList.toggle("w-50");
   searchIngredientsInput.classList.toggle("w-100");
   searchListBlockIngredients.classList.toggle("w-100");
-
+  searchListIngredients.classList.toggle("expand-search-list");
   searchIngredientsExpand.classList.add("rotated");
+
   searchIngredientsInput.focus();
 });
 
@@ -55,6 +61,7 @@ document.addEventListener("click", (evt) => {
   searchIngredients.classList.remove("w-50");
   searchIngredientsInput.classList.remove("w-100");
   searchListBlockIngredients.classList.remove("w-100");
+  searchListIngredients.classList.remove("expand-search-list");
 });
 
 // Appareil
@@ -69,6 +76,8 @@ const searchListBlockAppareils = document.querySelector(
   ".search-list-block-appareils"
 );
 const searchAppareils = document.querySelector(".search-wrapper-appareils");
+const searchListAppareils = document.querySelector(".search-list-appareils");
+searchListAppareils.classList.remove("expand-search-list");
 
 // click input Appareil
 searchAppareilsInput.addEventListener("click", () => {
@@ -90,7 +99,7 @@ searchAppareilsExpand.addEventListener("click", () => {
   searchAppareils.classList.toggle("w-50");
   searchAppareilsInput.classList.toggle("w-100");
   searchListBlockAppareils.classList.toggle("w-100");
-
+  searchListAppareils.classList.toggle("expand-search-list");
   searchAppareilsExpand.classList.add("rotated");
   searchAppareilsInput.focus();
 });
@@ -114,6 +123,7 @@ document.addEventListener("click", (evt) => {
   searchAppareils.classList.remove("w-50");
   searchAppareilsInput.classList.remove("w-100");
   searchListBlockAppareils.classList.remove("w-100");
+  searchListAppareils.classList.remove("expand-search-list");
 });
 
 // Ustensiles
@@ -128,6 +138,8 @@ const searchListBlockUstensiles = document.querySelector(
   ".search-list-block-ustensiles"
 );
 const searchUstensiles = document.querySelector(".search-wrapper-ustensiles");
+const searchListUstensiles = document.querySelector(".search-list-ustensiles");
+searchListUstensiles.classList.remove("expand-search-list");
 
 // click input Ustensiles
 searchUstensilesInput.addEventListener("click", () => {
@@ -149,7 +161,7 @@ searchUstensilesExpand.addEventListener("click", () => {
   searchUstensiles.classList.toggle("w-50");
   searchUstensilesInput.classList.toggle("w-100");
   searchListBlockUstensiles.classList.toggle("w-100");
-
+  searchListUstensiles.classList.toggle("expand-search-list");
   searchUstensilesExpand.classList.add("rotated");
   searchUstensilesInput.focus();
 });
@@ -173,4 +185,5 @@ document.addEventListener("click", (evt) => {
   searchUstensiles.classList.remove("w-50");
   searchUstensilesInput.classList.remove("w-100");
   searchListBlockUstensiles.classList.remove("w-100");
+  searchListUstensiles.classList.remove("expand-search-list");
 });
