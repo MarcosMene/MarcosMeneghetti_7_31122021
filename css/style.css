@@ -11138,6 +11138,10 @@ textarea.form-control-lg {
   width: 500px;
 }
 
+.height-auto {
+  height: auto;
+}
+
 .disable-button {
   pointer-events: none;
 }
@@ -11202,8 +11206,8 @@ input {
   margin-right: 2rem;
 }
 
-.dropdown-menu {
-  width: 500px;
+#search::placeholder {
+  color: rgba(0, 0, 0, 0.25);
 }
 
 .search-buttons {
@@ -11303,8 +11307,8 @@ input {
   z-index: 200;
   width: 185px;
   padding: 10px 30px;
-  height: 300px;
-  overflow-y: scroll;
+  height: 360px;
+  overflow-y: auto;
   transition: width 0.2s ease-in-out;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
@@ -11354,16 +11358,9 @@ input {
 .search-buttons .search-wrapper-appareils ul li,
 .search-buttons .search-wrapper-ustensiles ul li {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-bottom: 10px;
   display: inline;
-}
-.search-buttons .search-wrapper-ingredients ul a,
-.search-buttons .search-wrapper-appareils ul a,
-.search-buttons .search-wrapper-ustensiles ul a {
-  padding: 0;
-  margin: 0;
-  display: inline;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

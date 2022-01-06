@@ -11,6 +11,7 @@
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <!--  CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -29,16 +30,15 @@
     </header>
 
     <!-- input  -->
-    <div class="input-group container mt-4">
+    <div class="input-group container mt-4" id="main-research-input">
         <input type="text" id="search" class="form-control p-2 rounded"
             placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
             aria-label="Rechercher un ingrédient, appareil, ustensiles ou une recette">
-
     </div>
 
     <!-- tag  -->
-    <div id="tags" data-filter-tags class=" container my-4 ">
-        <button type="button" class="btn btn-primary text-white btn-sm px-3 ">
+    <div id="mini-tags" class="container my-4">
+        <button type="button" class="btn btn-primary text-white btn-sm px-3 close-tag">
             <span class="mx-2 d-inline">Coco</span>
             <i class="far fa-times-circle fa-lg"></i>
         </button>
@@ -423,6 +423,7 @@
 
     <!-- tools  -->
     <script src="./tools/button-research-action.js"></script>
+    <script src="./tools/mini_tags.js"></script>
 
 </body>
 
