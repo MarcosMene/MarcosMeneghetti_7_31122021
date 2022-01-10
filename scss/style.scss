@@ -15,9 +15,9 @@
     width: 500px;
 }
 
-.height-auto {
-    height: auto;
-}
+// .height-auto {
+//     height: auto;
+// }
 
 
 .disable-button {
@@ -188,12 +188,12 @@ input {
         .search-list-block-appareils,
         .search-list-block-ustensiles {
             position: absolute;
-            top: 56px;
+            top: 54px;
             left: 0;
             z-index: 200;
             width: 185px;
             padding: 10px 30px;
-            height: 360px;
+            max-height: 360px;
             overflow-y: auto;
             transition: width .2s ease-in-out;
         }
@@ -248,4 +248,12 @@ input {
 
     }
 
+}
+
+.message-no-recette {
+    margin-top: 20px;
+}
+
+.message-no-recette p {
+    font-size: 22px;
 }

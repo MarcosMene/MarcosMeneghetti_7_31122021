@@ -11138,10 +11138,6 @@ textarea.form-control-lg {
   width: 500px;
 }
 
-.height-auto {
-  height: auto;
-}
-
 .disable-button {
   pointer-events: none;
 }
@@ -11302,12 +11298,12 @@ input {
 .search-buttons .search-wrapper-ustensiles .search-list-block-appareils,
 .search-buttons .search-wrapper-ustensiles .search-list-block-ustensiles {
   position: absolute;
-  top: 56px;
+  top: 54px;
   left: 0;
   z-index: 200;
   width: 185px;
   padding: 10px 30px;
-  height: 360px;
+  max-height: 360px;
   overflow-y: auto;
   transition: width 0.2s ease-in-out;
 }
@@ -11361,6 +11357,14 @@ input {
   margin-bottom: 10px;
   display: inline;
   cursor: pointer;
+}
+
+.message-no-recette {
+  margin-top: 20px;
+}
+
+.message-no-recette p {
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=style.css.map */

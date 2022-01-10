@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Les petits plats</title>
+
 </head>
 
 <body>
@@ -29,392 +30,403 @@
         </div>
     </header>
 
-    <!-- input main research -->
-    <div class="input-group container mt-4" id="main-research-input">
-        <input type="text" id="search" class="form-control p-2 rounded"
-            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
-            aria-label="Rechercher un ingrédient, appareil, ustensiles ou une recette">
-    </div>
+    <main class="main">
 
-    <!-- tag  -->
-    <div id="mini-tags" class="container my-4">
-        <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
-            <span class="mx-2 d-inline">Coco</span>
-            <i class="far fa-times-circle fa-lg close-tag"></i>
-        </button>
-        <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
-            <span class="mx-2 d-inline">Lait</span>
-            <i class="far fa-times-circle fa-lg close-tag"></i>
-        </button>
-        <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
-            <span class="mx-2 d-inline">Bier</span>
-            <i class="far fa-times-circle fa-lg close-tag"></i>
-        </button>
-    </div>
 
-    <!-- menu ingredients  -->
-    <div class="container my-4 ">
-        <div class="search-buttons">
 
-            <!-- first button  -->
-            <div class="search-wrapper-ingredients bg-primary">
-                <div class="search-control-ingredients">
-                    <input type="text" name="ingredients" id="ingredients" class="hide"
-                        placeholder="Rechercher ingredients">
-                    <label for="ingredients">Ingredients</label>
+        <!-- input main research -->
+        <section class="input-group container mt-4" id="main-research-input">
+            <input type="text" id="search" class="form-control p-2 rounded"
+                placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                aria-label="Rechercher un ingrédient, appareil, ustensiles ou une recette">
+        </section>
+
+        <!-- mini tags  -->
+        <section id="mini-tags" class="container my-4">
+            <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
+                <span class="mx-2 d-inline">Coco</span>
+                <i class="far fa-times-circle fa-lg close-tag"></i>
+            </button>
+            <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
+                <span class="mx-2 d-inline">Lait</span>
+                <i class="far fa-times-circle fa-lg close-tag"></i>
+            </button>
+            <button type="button" class="btn btn-primary text-white btn-sm px-3 tag-button">
+                <span class="mx-2 d-inline">Bier</span>
+                <i class="far fa-times-circle fa-lg close-tag"></i>
+            </button>
+        </section>
+
+        <!-- les tags  -->
+        <section class="container my-4 ">
+            <div class="search-buttons">
+
+                <!-- first tag ingredients  -->
+                <div class="search-wrapper-ingredients bg-primary">
+                    <div class="search-control-ingredients">
+                        <input type="text" name="ingredients" id="ingredients" class="hide"
+                            placeholder="Rechercher ingredients">
+                        <label for="ingredients">Ingredients</label>
+                    </div>
+                    <div class="close-dropdown-ingredients">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <!-- list ingredients  -->
+                    <div class="search-list-block-ingredients hide">
+                        <ul class="search-list-ingredients">
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="close-dropdown-ingredients">
-                    <i class="fas fa-chevron-down"></i>
+
+                <!-- second tag appareil  -->
+                <div class="search-wrapper-appareils bg-success">
+                    <div class="search-control-appareils">
+                        <input type="text" name="appareils" id="appareils" class="hide"
+                            placeholder="Rechercher appareils">
+                        <label for="appareils">Appareil</label>
+                    </div>
+                    <div class="close-dropdown-appareils">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <!-- list appareils  -->
+                    <div class="search-list-block-appareils hide">
+                        <ul class="search-list-appareils">
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- list ingredients  -->
-                <div class="search-list-block-ingredients hide">
-                    <ul class="search-list-ingredients">
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                    </ul>
+                <!-- third tag ustensiles  -->
+                <div class="search-wrapper-ustensiles bg-danger">
+                    <div class="search-control-ustensiles">
+                        <input type="text" name="ustensiles" id="ustensiles" class="hide"
+                            placeholder="Rechercher ustensiles">
+                        <label for="ustensiles">Ustensiles</label>
+                    </div>
+                    <div class="close-dropdown-ustensiles">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <!-- list ustensiles  -->
+                    <div class="search-list-block-ustensiles hide">
+                        <ul class="search-list-ustensiles">
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                            <li class="search-item">Lait de coco</li>
+                            <li class="search-item">Sucre</li>
+                            <li class="search-item">Concombre</li>
+                            <li class="search-item">Citron Vert</li>
+                            <li class="search-item">Oignon</li>
+                            <li class="search-item">Riz blanc</li>
+                            <li class="search-item">Maïs</li>
+                            <li class="search-item">Crème fraiche</li>
+                            <li class="search-item">Pomme</li>
+                            <li class="search-item">Chocolat au lait</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- second button  -->
-            <div class="search-wrapper-appareils bg-success">
-                <div class="search-control-appareils">
-                    <input type="text" name="appareils" id="appareils" class="hide" placeholder="Rechercher appareils">
-                    <label for="appareils">Appareil</label>
-                </div>
-                <div class="close-dropdown-appareils">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <!-- list appareils  -->
-                <div class="search-list-block-appareils hide">
-                    <ul class="search-list-appareils">
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- third button  -->
-            <div class="search-wrapper-ustensiles bg-danger">
-                <div class="search-control-ustensiles">
-                    <input type="text" name="ustensiles" id="ustensiles" class="hide"
-                        placeholder="Rechercher ustensiles">
-                    <label for="ustensiles">Ustensiles</label>
-                </div>
-                <div class="close-dropdown-ustensiles">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <!-- list ustensiles  -->
-                <div class="search-list-block-ustensiles hide">
-                    <ul class="search-list-ustensiles">
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                        <li class="search-item">Lait de coco</li>
-                        <li class="search-item">Sucre</li>
-                        <li class="search-item">Concombre</li>
-                        <li class="search-item">Citron Vert</li>
-                        <li class="search-item">Oignon</li>
-                        <li class="search-item">Riz blanc</li>
-                        <li class="search-item">Maïs</li>
-                        <li class="search-item">Crème fraiche</li>
-                        <li class="search-item">Pomme</li>
-                        <li class="search-item">Chocolat au lait</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- cards  -->
+        <div class="container">
+            <!-- row  -->
+            <div class="row">
+                <!-- card column  -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+                <!-- card column  -->
+                <div class="col-sm-6  col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+
+                <!-- card column  -->
+                <div class="col-sm-6  col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+
+                <!-- card column  -->
+                <div class="col-sm-6  col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+
+                <!-- card column  -->
+                <div class="col-sm-6  col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+
+                <!-- card column  -->
+                <div class="col-sm-6  col-lg-4">
+                    <div class="card text-dark bg-light mb-3">
+                        <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+                            <!-- /recipe title  -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h2>Limonade de Coco</h2>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <i class="far fa-clock"></i>
+                                    <h2 class="card-text">10 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50">
+                                    <strong>Lait de coco:</strong> <span>400ml</span><br />
+                                    <strong>Jus de citron:</strong><span>2</span><br />
+                                    <strong>Créme de coco:</strong><span>4 cuillères</span><br />
+                                    <strong>Sucre:</strong><span>20g</span><br />
+                                    <strong>Glaçons:</strong><span>2</span>
+                                </div>
+
+                                <div class="w-50">
+                                    <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
+                                        le blender,
+                                        ajouter le lait,
+                                        la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
+                                        consistence désirée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card column  -->
+            </div> <!-- row  -->
         </div>
-    </div>
+        <section class="message-no-recette container text-center">
+            <p>
+                Aucune recette ne correspond à vous critères de recherche. Vous pouvez chercher "tarte aux pommes",
+                "poisson", etc.
+            </p>
 
-    <!-- cards  -->
-    <div class="container">
-        <!-- row  -->
-        <div class="row">
-            <!-- card column  -->
-            <div class="col-sm-6 col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-            <!-- card column  -->
-            <div class="col-sm-6  col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-
-            <!-- card column  -->
-            <div class="col-sm-6  col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-
-            <!-- card column  -->
-            <div class="col-sm-6  col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-
-            <!-- card column  -->
-            <div class="col-sm-6  col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-
-            <!-- card column  -->
-            <div class="col-sm-6  col-lg-4">
-                <div class="card text-dark bg-light mb-3">
-                    <img src="./assets/recettes/Poulet_coco_reunionnais.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                        <!-- /recipe title  -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h2>Limonade de Coco</h2>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <i class="far fa-clock"></i>
-                                <h2 class="card-text">10 min</h2>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="w-50">
-                                <strong>Lait de coco:</strong> <span>400ml</span><br />
-                                <strong>Jus de citron:</strong><span>2</span><br />
-                                <strong>Créme de coco:</strong><span>4 cuillères</span><br />
-                                <strong>Sucre:</strong><span>20g</span><br />
-                                <strong>Glaçons:</strong><span>2</span>
-                            </div>
-
-                            <div class="w-50">
-                                <p class="card-text d-inline-block">Mettre les glaçons à votre goût dans
-                                    le blender,
-                                    ajouter le lait,
-                                    la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                                    consistence désirée</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- card column  -->
-        </div> <!-- row  -->
-    </div>
-
-
+        </section>
+    </main>
 
 
 
@@ -429,8 +441,11 @@
     </script>
 
     <!-- tools  -->
-    <script src="./tools/button-research-action.js"></script>
-    <script src="./tools/mini_tags.js"></script>
+    <script src="./js/button-research-action.js"></script>
+    <script src="./js/mini_tags.js"></script>
+    <script type="module" src="./js/teste.js"></script>
+
+
 
 </body>
 
