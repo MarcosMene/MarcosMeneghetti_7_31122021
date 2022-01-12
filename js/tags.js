@@ -9,7 +9,7 @@ function getElementsInRecipes(recipes, elementToGet) {
           const ingredientsMap = recipe.ingredients.map(
             (ingr) => ingr.ingredient
           );
-          
+
           list.push(...ingredientsMap);
         }
       });

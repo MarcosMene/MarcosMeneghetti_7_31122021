@@ -11138,10 +11138,6 @@ textarea.form-control-lg {
   width: 500px;
 }
 
-.disable-button {
-  pointer-events: none;
-}
-
 .rotated {
   transform: rotate(180deg);
 }
@@ -11204,6 +11200,19 @@ input {
 
 #search::placeholder {
   color: rgba(0, 0, 0, 0.25);
+}
+
+.mini-tags {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mini-tags .tag-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 45px;
 }
 
 .search-buttons {

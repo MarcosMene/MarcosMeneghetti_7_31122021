@@ -1,4 +1,4 @@
-import recipes from "../data/recipes.js";
+// import recipes from "../data/recipes.js";
 
 // get all elements to create tag lists ingredients/appliance/ustensils
 function getElementsInRecipes(recipes, elementToGet) {
@@ -57,7 +57,7 @@ listIngredientsTag.forEach((element) => {
   const searchlistIngredients = document.querySelector(
     ".search-list-ingredients"
   );
-  const domIngredients = listsDOM(element);
+  const domIngredients = listsDOM(element, "ingredients");
   searchlistIngredients.append(domIngredients);
 });
 
@@ -71,7 +71,7 @@ const listApplianceTag = new Set(myAppareilsTags);
 
 listApplianceTag.forEach((element) => {
   const searchlistAppliance = document.querySelector(".search-list-appareils");
-  const domAppliance = listsDOM(element);
+  const domAppliance = listsDOM(element, "appareils");
   searchlistAppliance.append(domAppliance);
 });
 
@@ -86,6 +86,55 @@ listUstensilsTag.forEach((element) => {
   const searchlistUstensiles = document.querySelector(
     ".search-list-ustensiles"
   );
-  const domUstensiles = listsDOM(element);
+  const domUstensiles = listsDOM(element, "ustensils");
   searchlistUstensiles.append(domUstensiles);
 });
+
+// Create
+// minitags
+
+// ingredients
+const listItemIngredients = document.querySelectorAll(
+  ".search-item-ingredients"
+);
+const miniTags = document.querySelector("#mini-tags");
+for (let i = 0; i < listItemIngredients.length; i++) {
+  listItemIngredients[i].addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const miniTagsChild = minitagsDOM(
+      listItemIngredients[i].innerHTML,
+      "primary"
+    );
+    miniTags.appendChild(miniTagsChild);
+  });
+}
+
+// Appareil
+const listItemAppliances = document.querySelectorAll(".search-item-appareils");
+
+for (let i = 0; i < listItemAppliances.length; i++) {
+  listItemAppliances[i].addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const miniTagsChild = minitagsDOM(
+      listItemAppliances[i].innerHTML,
+      "success"
+    );
+    miniTags.appendChild(miniTagsChild);
+  });
+}
+// Ustensils
+const listItemUstensiles = document.querySelectorAll(".search-item-ustensils");
+
+for (let i = 0; i < listItemUstensiles.length; i++) {
+  listItemUstensiles[i].addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const miniTagsChild = minitagsDOM(
+      listItemUstensiles[i].innerHTML,
+      "danger"
+    );
+    miniTags.appendChild(miniTagsChild);
+  });
+}

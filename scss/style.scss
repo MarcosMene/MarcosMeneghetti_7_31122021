@@ -20,9 +20,9 @@
 // }
 
 
-.disable-button {
-    pointer-events: none;
-}
+// .disable-button {
+//     pointer-events: none;
+// }
 
 
 .rotated {
@@ -109,6 +109,18 @@ input {
 
 }
 
+.mini-tags {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mini-tags .tag-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 45px;
+}
 
 .search-buttons {
     display: flex;
