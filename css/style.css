@@ -11310,19 +11310,19 @@ input {
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appareils .search-list-block-ingredients,
 .search-buttons .search-wrapper-ustensiles .search-list-block-ingredients {
-  scrollbar-color: blue #3282f7;
+  scrollbar-color: #053b8b #3282f7;
   scrollbar-width: thin;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-appareils,
 .search-buttons .search-wrapper-appareils .search-list-block-appareils,
 .search-buttons .search-wrapper-ustensiles .search-list-block-appareils {
-  scrollbar-color: green #68d9a4;
+  scrollbar-color: #228657 #68d9a4;
   scrollbar-width: thin;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-ustensiles,
 .search-buttons .search-wrapper-appareils .search-list-block-ustensiles,
 .search-buttons .search-wrapper-ustensiles .search-list-block-ustensiles {
-  scrollbar-color: red #ed6454;
+  scrollbar-color: #981e10 #ed6454;
   scrollbar-width: thin;
 }
 .search-buttons .search-wrapper-ingredients .search-list-ingredients,

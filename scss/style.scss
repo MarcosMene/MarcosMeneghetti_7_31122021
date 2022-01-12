@@ -200,20 +200,20 @@ input {
 
 
         .search-list-block-ingredients {
-            scrollbar-color: blue $primary;
+            scrollbar-color: darken($primary, 30%) $primary;
             scrollbar-width: thin;
         }
 
 
         .search-list-block-appareils {
-            scrollbar-color: green $success;
+            scrollbar-color: darken($success, 30%) $success;
             scrollbar-width: thin;
 
         }
 
 
         .search-list-block-ustensiles {
-            scrollbar-color: red $danger;
+            scrollbar-color: darken($danger, 30%) $danger;
             scrollbar-width: thin;
 
         }
