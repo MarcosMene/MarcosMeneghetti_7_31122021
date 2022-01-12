@@ -1,4 +1,4 @@
-// Ingredients
+// Ingredients DOM
 const searchIngredients = document.querySelector(".search-wrapper-ingredients");
 const searchIngredientsInput = document.querySelector("#ingredients");
 const searchIngredientsLabelInput = document.querySelector(
@@ -14,12 +14,18 @@ const searchListBlockIngredients = document.querySelector(
 const searchListIngredients = document.querySelector(
   ".search-list-ingredients"
 );
+
 searchListIngredients.classList.remove("expand-search-list");
 
 // click input Ingredients
 searchIngredientsInput.addEventListener("click", () => {
+  searchIngredientsInput.value = "";
   searchIngredientsInput.classList.remove("hide");
   searchIngredientsLabelInput.classList.add("hide");
+  searchIngredients.style.width = "20%";
+  searchIngredientsInput.style.width = "100%";
+  searchListBlockIngredients.style.width = "100%";
+  searchIngredientsInput.focus();
 });
 
 // input focus Ingredients
@@ -59,12 +65,24 @@ document.addEventListener("click", (evt) => {
   searchListBlockIngredients.classList.add("hide");
   searchIngredientsExpand.classList.remove("rotated");
   searchIngredients.classList.remove("w-50");
+  searchIngredients.style.width = "185px";
   searchIngredientsInput.classList.remove("w-100");
   searchListBlockIngredients.classList.remove("w-100");
   searchListIngredients.classList.remove("expand-search-list");
+
+  // verify if list ingredients contains display none
+  const searchListIngredientsLi = document.querySelectorAll(
+    ".search-list-ingredients li"
+  );
+  // replace display none to display block for list ingredients
+  searchListIngredientsLi.forEach((list) => {
+    if (list.style.display === "none") {
+      list.style.display = "block";
+    }
+  });
 });
 
-// Appareil
+// Appareil DOM
 const searchAppareilsInput = document.querySelector("#appareils");
 const searchAppareilsLabelInput = document.querySelector(
   ".search-control-appareils label"
@@ -81,8 +99,13 @@ searchListAppareils.classList.remove("expand-search-list");
 
 // click input Appareil
 searchAppareilsInput.addEventListener("click", () => {
+  searchAppareilsInput.value = "";
   searchAppareilsInput.classList.remove("hide");
   searchAppareilsLabelInput.classList.add("hide");
+  searchAppareils.style.width = "20%";
+  searchAppareilsInput.style.width = "100%";
+  searchListBlockAppareils.style.width = "100%";
+  searchAppareilsInput.focus();
 });
 
 // input focus Appareil
@@ -121,12 +144,24 @@ document.addEventListener("click", (evt) => {
   searchListBlockAppareils.classList.add("hide");
   searchAppareilsExpand.classList.remove("rotated");
   searchAppareils.classList.remove("w-50");
+  searchAppareils.style.width = "185px";
   searchAppareilsInput.classList.remove("w-100");
   searchListBlockAppareils.classList.remove("w-100");
   searchListAppareils.classList.remove("expand-search-list");
+
+  // verify if list appareils contains display none
+  const searchListAppareilsLi = document.querySelectorAll(
+    ".search-list-appareils li"
+  );
+  // replace display none to display block for list appareils
+  searchListAppareilsLi.forEach((list) => {
+    if (list.style.display === "none") {
+      list.style.display = "block";
+    }
+  });
 });
 
-// Ustensiles
+// Ustensiles DOM
 const searchUstensilesInput = document.querySelector("#ustensiles");
 const searchUstensilesLabelInput = document.querySelector(
   ".search-control-ustensiles label"
@@ -143,8 +178,13 @@ searchListUstensiles.classList.remove("expand-search-list");
 
 // click input Ustensiles
 searchUstensilesInput.addEventListener("click", () => {
+  searchUstensilesInput.value = "";
   searchUstensilesInput.classList.remove("hide");
   searchUstensilesLabelInput.classList.add("hide");
+  searchUstensiles.style.width = "20%";
+  searchUstensilesInput.style.width = "100%";
+  searchListBlockUstensiles.style.width = "100%";
+  searchUstensilesInput.focus();
 });
 
 // input focus Ustensiles
@@ -159,6 +199,7 @@ searchUstensilesExpand.addEventListener("click", () => {
   searchUstensilesInput.classList.remove("hide");
   searchUstensilesLabelInput.classList.add("hide");
   searchUstensiles.classList.toggle("w-50");
+
   searchUstensilesInput.classList.toggle("w-100");
   searchListBlockUstensiles.classList.toggle("w-100");
   searchListUstensiles.classList.toggle("expand-search-list");
@@ -183,7 +224,19 @@ document.addEventListener("click", (evt) => {
   searchListBlockUstensiles.classList.add("hide");
   searchUstensilesExpand.classList.remove("rotated");
   searchUstensiles.classList.remove("w-50");
+  searchUstensiles.style.width = "185px";
   searchUstensilesInput.classList.remove("w-100");
   searchListBlockUstensiles.classList.remove("w-100");
   searchListUstensiles.classList.remove("expand-search-list");
+
+  // verify if list ustensiles contains display none
+  const searchListUstensilesLi = document.querySelectorAll(
+    ".search-list-ustensiles li"
+  );
+  // replace display none to display block for list ustensiles
+  searchListUstensilesLi.forEach((list) => {
+    if (list.style.display === "none") {
+      list.style.display = "block";
+    }
+  });
 });

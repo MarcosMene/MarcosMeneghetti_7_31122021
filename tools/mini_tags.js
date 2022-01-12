@@ -1,3 +1,4 @@
+// remove mini tags on click x
 function remove() {
   this.parentNode.remove();
 }
