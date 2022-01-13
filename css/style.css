@@ -11178,6 +11178,10 @@ label {
 .card p {
   font-family: "Roboto";
 }
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
 .card .card-header-title {
   display: flex;
   margin-bottom: 5px;

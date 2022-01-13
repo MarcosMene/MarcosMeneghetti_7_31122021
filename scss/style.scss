@@ -77,6 +77,11 @@ label {
         font-family: "Roboto"
     }
 
+    img {
+        height: 250px;
+        object-fit: cover;
+    }
+
     .card-header-title {
         display: flex;
         margin-bottom: 5px;

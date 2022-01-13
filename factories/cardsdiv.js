@@ -19,7 +19,7 @@ function cardsFactory(data) {
     let elementCard = "";
     elementCard += `
   <div class="card text-dark bg-light mb-3">
-    <img src="./assets/recettes/1.jpeg" class="card-img-top" alt="${name}">
+    <img src="./assets/recettes/${id}.jpg" class="card-img-top" alt="${name}">
     <div class="card-body">
        
         <div class="card-header-title d-flex justify-content-between align-items-start">
