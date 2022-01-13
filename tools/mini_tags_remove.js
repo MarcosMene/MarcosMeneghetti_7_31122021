@@ -3,8 +3,11 @@ function remove() {
   this.parentNode.remove();
 }
 
-let buttonTag = document.querySelectorAll(".close-tag");
-
+const buttonTag = document.querySelectorAll(".close-tag");
+console.log(buttonTag);
+console.log(buttonTag);
+console.log(buttonTag);
+console.log(buttonTag);
 for (var i = 0; i < buttonTag.length; i++) {
   buttonTag[i].addEventListener("click", remove, false);
 }

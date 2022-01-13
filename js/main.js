@@ -45,9 +45,11 @@ function getElementsInRecipes(recipes, elementToGet) {
   }
 }
 
+//******** */
 //  Create list
 //  elements for
 //  ingredients
+//******** */
 
 const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
 // remove repeated words in the array
@@ -61,9 +63,11 @@ listIngredientsTag.forEach((element) => {
   searchlistIngredients.append(domIngredients);
 });
 
+//******** */
 // Create
 // list elements
 //  for appliance
+//******** */
 
 const myAppareilsTags = getElementsInRecipes(recipes, "appliance");
 // remove repeated words in the array
@@ -75,9 +79,11 @@ listApplianceTag.forEach((element) => {
   searchlistAppliance.append(domAppliance);
 });
 
+//******** */
 // Create list
 // elements for
 // ustensils
+//******** */
 
 const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
 // remove repeated words in the array
@@ -90,8 +96,10 @@ listUstensilsTag.forEach((element) => {
   searchlistUstensiles.append(domUstensiles);
 });
 
+//******** */
 // Create
 // minitags
+//******** */
 
 // ingredients
 const listItemIngredients = document.querySelectorAll(
@@ -138,3 +146,17 @@ for (let i = 0; i < listItemUstensiles.length; i++) {
     miniTags.appendChild(miniTagsChild);
   });
 }
+
+//******** */
+//Create
+//Cards
+//recettes
+//******** */
+
+const rowCardsRecipes = document.querySelector(".cards-recipes");
+
+recipes.forEach((recipe) => {
+  const cardRecipeModel = cardsFactory(recipe);
+  const recipeCardDOM = cardRecipeModel.cardsRecipesDOM();
+  rowCardsRecipes.appendChild(recipeCardDOM);
+});

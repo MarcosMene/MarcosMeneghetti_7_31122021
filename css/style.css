@@ -11178,6 +11178,36 @@ label {
 .card p {
   font-family: "Roboto";
 }
+.card .card-header-title {
+  display: flex;
+  margin-bottom: 5px;
+}
+.card .card-header-title h2, .card .card-header-title .h2 {
+  max-width: 75%;
+}
+.card .card-header-title h3, .card .card-header-title .h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.card .card-header-title .card-timing {
+  flex-grow: 0;
+}
+.card .card-body {
+  height: 260px;
+}
+.card .card-body .card-body-ingredient {
+  padding-right: 20px;
+}
+.card .card-body .card-body-description {
+  font-size: 12px;
+  width: 100%;
+  white-space: normal;
+  overflow: hidden;
+  max-height: 180px;
+}
+.card .card-body .card-body-description span {
+  text-overflow: ellipsis;
+}
 
 #search {
   background-image: url(../assets/images/lupe.png);
@@ -11370,6 +11400,7 @@ input {
 
 .message-no-recette {
   margin-top: 20px;
+  display: none;
 }
 
 .message-no-recette p {

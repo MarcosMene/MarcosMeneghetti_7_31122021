@@ -77,6 +77,47 @@ label {
         font-family: "Roboto"
     }
 
+    .card-header-title {
+        display: flex;
+        margin-bottom: 5px;
+
+        h2 {
+            max-width: 75%;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-timing {
+            flex-grow: 0;
+        }
+
+    }
+
+    .card-body {
+        height: 260px;
+
+        .card-body-ingredient {
+            padding-right: 20px;
+        }
+
+        .card-body-description {
+            font-size: 12px;
+            width: 100%;
+            white-space: normal;
+            // text-align: justify;
+            // text-justify: inter-word;
+            overflow: hidden;
+            max-height: 180px;
+
+            span {
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
 }
 
 
@@ -264,6 +305,7 @@ input {
 
 .message-no-recette {
     margin-top: 20px;
+    display: none;
 }
 
 .message-no-recette p {
