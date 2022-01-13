@@ -97,25 +97,31 @@ label {
     }
 
     .card-body {
-        height: 260px;
+        height: 300px;
+
+
+        .card-recette {
+            height: 80%;
+        }
 
         .card-body-ingredient {
             padding-right: 20px;
+            // height: 50%;
         }
 
         .card-body-description {
             font-size: 12px;
             width: 100%;
-            white-space: normal;
-            // text-align: justify;
-            // text-justify: inter-word;
+            // white-space: normal;
+            text-align: justify;
+            text-justify: inter-word;
             overflow: hidden;
-            max-height: 180px;
+            height: 100%;
+            text-overflow: ellipsis;
 
-            span {
-                text-overflow: ellipsis;
-            }
+
         }
+
     }
 
 }
@@ -161,6 +167,10 @@ input {
     align-items: center;
     justify-content: center;
     margin: 45px;
+
+    i {
+        z-index: 200;
+    }
 }
 
 .search-buttons {

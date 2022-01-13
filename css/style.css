@@ -11193,7 +11193,10 @@ label {
   flex-grow: 0;
 }
 .card .card-body {
-  height: 260px;
+  height: 300px;
+}
+.card .card-body .card-recette {
+  height: 80%;
 }
 .card .card-body .card-body-ingredient {
   padding-right: 20px;
@@ -11201,11 +11204,10 @@ label {
 .card .card-body .card-body-description {
   font-size: 12px;
   width: 100%;
-  white-space: normal;
+  text-align: justify;
+  text-justify: inter-word;
   overflow: hidden;
-  max-height: 180px;
-}
-.card .card-body .card-body-description span {
+  height: 100%;
   text-overflow: ellipsis;
 }
 
@@ -11243,6 +11245,9 @@ input {
   align-items: center;
   justify-content: center;
   margin: 45px;
+}
+.mini-tags .tag-button i {
+  z-index: 200;
 }
 
 .search-buttons {

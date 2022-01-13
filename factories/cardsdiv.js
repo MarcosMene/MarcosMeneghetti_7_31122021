@@ -29,7 +29,7 @@ function cardsFactory(data) {
                 <h3 class="card-text">${time} min</h3>
             </div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between card-recette">
             <div class="w-50 card-body-ingredient">`;
 
     ingredients.forEach((ingredient) => {
@@ -49,7 +49,7 @@ function cardsFactory(data) {
             </div>
 
             <div class="w-50 card-body-description">
-              ${description}
+           <p>${description}</p>  
             </div>
         </div>
     </div>

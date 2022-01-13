@@ -44,7 +44,6 @@ searchIngredientsExpand.addEventListener("click", () => {
   searchListBlockIngredients.classList.toggle("w-100");
   searchListIngredients.classList.toggle("expand-search-list");
   searchIngredientsExpand.classList.add("rotated");
-
   searchIngredientsInput.focus();
 });
 
