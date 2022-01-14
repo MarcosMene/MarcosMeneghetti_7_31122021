@@ -68,19 +68,19 @@ inputUstensiles.onkeyup = () => {
 };
 // });
 
-// onclick hide elements from de list ingredients
+// onclick remove elements from de list ingredients
 for (let i of listIngredientsLi) {
   i.addEventListener("click", () => {
     i.remove();
   });
 }
-// onclick hide elements from de list appliance
+// onclick remove elements from de list appliance
 for (let i of listAppareilsLi) {
   i.addEventListener("click", () => {
     i.remove();
   });
 }
-// onclick hide elements from de list ustensiles
+// onclick remove elements from de list ustensiles
 for (let i of listUstensilesLi) {
   i.addEventListener("click", () => {
     i.remove();

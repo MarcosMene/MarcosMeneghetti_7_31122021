@@ -115,6 +115,13 @@ for (let i = 0; i < listItemIngredients.length; i++) {
       "primary"
     );
     miniTags.appendChild(miniTagsChild);
+
+    const removeMiniTag = document.querySelectorAll(".tag-button");
+    console.log(removeMiniTag);
+    for (let j = 0; j < removeMiniTag.length; j++)
+      removeMiniTag[j].addEventListener("click", () => {
+        removeMiniTag[j].remove();
+      });
   });
 }
 
@@ -130,6 +137,12 @@ for (let i = 0; i < listItemAppliances.length; i++) {
       "success"
     );
     miniTags.appendChild(miniTagsChild);
+    const removeMiniTag = document.querySelectorAll(".tag-button");
+    console.log(removeMiniTag);
+    for (let j = 0; j < removeMiniTag.length; j++)
+      removeMiniTag[j].addEventListener("click", () => {
+        removeMiniTag[j].remove();
+      });
   });
 }
 // Ustensils
@@ -144,6 +157,12 @@ for (let i = 0; i < listItemUstensiles.length; i++) {
       "danger"
     );
     miniTags.appendChild(miniTagsChild);
+    const removeMiniTag = document.querySelectorAll(".tag-button");
+    console.log(removeMiniTag);
+    for (let j = 0; j < removeMiniTag.length; j++)
+      removeMiniTag[j].addEventListener("click", () => {
+        removeMiniTag[j].remove();
+      });
   });
 }
 
