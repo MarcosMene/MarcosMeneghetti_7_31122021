@@ -192,7 +192,7 @@ input {
 
     .search-wrapper-ingredients,
     .search-wrapper-appliances,
-    .search-wrapper-ustensiles {
+    .search-wrapper-ustensils {
         display: flex;
         align-items: center;
         position: relative;
@@ -206,7 +206,7 @@ input {
 
         .search-control-ingredients,
         .search-control-appliances,
-        .search-control-ustensiles {
+        .search-control-ustensils {
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -217,7 +217,7 @@ input {
 
         .close-dropdown-ingredients,
         .close-dropdown-appliances,
-        .close-dropdown-ustensiles {
+        .close-dropdown-ustensils {
 
             transition: all .2s ease-in-out;
             margin: 0 10px;
@@ -228,7 +228,7 @@ input {
 
         .ingredients-text,
         .appliances-text,
-        .ustensiles-text {
+        .ustensils-text {
             pointer-events: none;
 
         }
@@ -251,7 +251,7 @@ input {
             background-color: $success;
         }
 
-        .search-list-block-ustensiles {
+        .search-list-block-ustensils {
             background-color: $danger;
         }
 
@@ -259,7 +259,7 @@ input {
 
         .search-list-block-ingredients,
         .search-list-block-appliances,
-        .search-list-block-ustensiles {
+        .search-list-block-ustensils {
             position: absolute;
             top: 54px;
             left: 0;
@@ -285,7 +285,7 @@ input {
         }
 
 
-        .search-list-block-ustensiles {
+        .search-list-block-ustensils {
             scrollbar-color: darken($danger, 30%) $danger;
             scrollbar-width: thin;
 
@@ -293,7 +293,7 @@ input {
 
         .search-list-ingredients,
         .search-list-appliances,
-        .search-list-ustensiles {
+        .search-list-ustensils {
             width: 100%;
             margin-right: 40px;
             display: grid;

@@ -160,80 +160,80 @@ document.addEventListener("click", (evt) => {
   });
 });
 
-// Ustensiles DOM
-const searchUstensilesInput = document.querySelector("#ustensiles");
-const searchUstensilesLabelInput = document.querySelector(
-  ".search-control-ustensiles label"
+// Ustensils DOM
+const searchUstensilsInput = document.querySelector("#ustensils");
+const searchUstensilsLabelInput = document.querySelector(
+  ".search-control-ustensils label"
 );
-const searchUstensilesExpand = document.querySelector(
-  ".close-dropdown-ustensiles"
+const searchUstensilsExpand = document.querySelector(
+  ".close-dropdown-ustensils"
 );
-const searchListBlockUstensiles = document.querySelector(
-  ".search-list-block-ustensiles"
+const searchListBlockUstensils = document.querySelector(
+  ".search-list-block-ustensils"
 );
-const searchUstensiles = document.querySelector(".search-wrapper-ustensiles");
-const searchListUstensiles = document.querySelector(".search-list-ustensiles");
-searchListUstensiles.classList.remove("expand-search-list");
+const searchUstensils = document.querySelector(".search-wrapper-ustensils");
+const searchListUstensils = document.querySelector(".search-list-ustensils");
+searchListUstensils.classList.remove("expand-search-list");
 
-// click input Ustensiles
-searchUstensilesInput.addEventListener("click", () => {
-  searchUstensilesInput.value = "";
-  searchUstensilesInput.classList.remove("hide");
-  searchUstensilesLabelInput.classList.add("hide");
-  searchUstensiles.style.width = "20%";
-  searchUstensilesInput.style.width = "100%";
-  searchListBlockUstensiles.style.width = "100%";
-  searchUstensilesInput.focus();
+// click input Ustensils
+searchUstensilsInput.addEventListener("click", () => {
+  searchUstensilsInput.value = "";
+  searchUstensilsInput.classList.remove("hide");
+  searchUstensilsLabelInput.classList.add("hide");
+  searchUstensils.style.width = "20%";
+  searchUstensilsInput.style.width = "100%";
+  searchListBlockUstensils.style.width = "100%";
+  searchUstensilsInput.focus();
 });
 
-// input focus Ustensiles
-searchUstensilesInput.addEventListener("focus", () => {
-  searchListBlockUstensiles.classList.remove("hide");
-  searchUstensilesExpand.classList.add("rotated");
+// input focus Ustensils
+searchUstensilsInput.addEventListener("focus", () => {
+  searchListBlockUstensils.classList.remove("hide");
+  searchUstensilsExpand.classList.add("rotated");
 });
 
-// click arrow button Ustensiles
-searchUstensilesExpand.addEventListener("click", () => {
-  searchListBlockUstensiles.classList.remove("hide");
-  searchUstensilesInput.classList.remove("hide");
-  searchUstensilesLabelInput.classList.add("hide");
-  searchUstensiles.classList.toggle("w-50");
+// click arrow button Ustensils
+searchUstensilsExpand.addEventListener("click", () => {
+  searchListBlockUstensils.classList.remove("hide");
+  searchUstensilsInput.classList.remove("hide");
+  searchUstensilsLabelInput.classList.add("hide");
+  searchUstensils.classList.toggle("w-50");
 
-  searchUstensilesInput.classList.toggle("w-100");
-  searchListBlockUstensiles.classList.toggle("w-100");
-  searchListUstensiles.classList.toggle("expand-search-list");
-  searchUstensilesExpand.classList.add("rotated");
-  searchUstensilesInput.focus();
+  searchUstensilsInput.classList.toggle("w-100");
+  searchListBlockUstensils.classList.toggle("w-100");
+  searchListUstensils.classList.toggle("expand-search-list");
+  searchUstensilsExpand.classList.add("rotated");
+  searchUstensilsInput.focus();
 });
 
-// click outside div button Ustensiles
+// click outside div button Ustensils
 document.addEventListener("click", (evt) => {
   let targetEl = evt.target; // clicked element
   do {
-    if (targetEl == searchUstensiles) {
+    if (targetEl == searchUstensils) {
       return;
     }
-    // Go up the DOM Ustensiles
+    // Go up the DOM Ustensils
     targetEl = targetEl.parentNode;
   } while (targetEl);
-  // click outside Ustensiles
-  searchUstensilesInput.classList.add("hide");
-  searchUstensilesInput.value = "";
-  searchUstensilesLabelInput.classList.remove("hide");
-  searchListBlockUstensiles.classList.add("hide");
-  searchUstensilesExpand.classList.remove("rotated");
-  searchUstensiles.classList.remove("w-50");
-  searchUstensiles.style.width = "185px";
-  searchUstensilesInput.classList.remove("w-100");
-  searchListBlockUstensiles.classList.remove("w-100");
-  searchListUstensiles.classList.remove("expand-search-list");
+  // click outside Ustensils
+  searchUstensilsInput.classList.add("hide");
+  searchUstensilsInput.value = "";
+  searchUstensilsLabelInput.classList.remove("hide");
+  searchListBlockUstensils.classList.add("hide");
+  searchUstensilsExpand.classList.remove("rotated");
+  searchUstensils.classList.remove("w-50");
+  searchUstensils.style.width = "185px";
+  searchUstensilsInput.classList.remove("w-100");
+  searchListBlockUstensils.classList.remove("w-100");
+  searchListUstensils.classList.remove("expand-search-list");
 
-  // verify if list ustensiles contains display none
-  const searchListUstensilesLi = document.querySelectorAll(
-    ".search-list-ustensiles li"
+  // verify if list ustensils contains display none
+  const searchListUstensilsLi = document.querySelectorAll(
+    ".search-list-ustensils li"
   );
-  // replace display none to display block for list ustensiles
-  searchListUstensilesLi.forEach((list) => {
+  // replace display none to display block for list ustensils
+  searchListUstensilsLi.forEach((list) => {
     if (list.style.display === "none") {
       list.style.display = "block";
     }

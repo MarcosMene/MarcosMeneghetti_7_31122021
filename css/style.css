@@ -12222,7 +12222,7 @@ input {
 
 .search-buttons .search-wrapper-ingredients,
 .search-buttons .search-wrapper-appliances,
-.search-buttons .search-wrapper-ustensiles {
+.search-buttons .search-wrapper-ustensils {
   display: flex;
   align-items: center;
   position: relative;
@@ -12235,13 +12235,13 @@ input {
 
 .search-buttons .search-wrapper-ingredients .search-control-ingredients,
 .search-buttons .search-wrapper-ingredients .search-control-appliances,
-.search-buttons .search-wrapper-ingredients .search-control-ustensiles,
+.search-buttons .search-wrapper-ingredients .search-control-ustensils,
 .search-buttons .search-wrapper-appliances .search-control-ingredients,
 .search-buttons .search-wrapper-appliances .search-control-appliances,
-.search-buttons .search-wrapper-appliances .search-control-ustensiles,
-.search-buttons .search-wrapper-ustensiles .search-control-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-control-appliances,
-.search-buttons .search-wrapper-ustensiles .search-control-ustensiles {
+.search-buttons .search-wrapper-appliances .search-control-ustensils,
+.search-buttons .search-wrapper-ustensils .search-control-ingredients,
+.search-buttons .search-wrapper-ustensils .search-control-appliances,
+.search-buttons .search-wrapper-ustensils .search-control-ustensils {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -12251,13 +12251,13 @@ input {
 
 .search-buttons .search-wrapper-ingredients .close-dropdown-ingredients,
 .search-buttons .search-wrapper-ingredients .close-dropdown-appliances,
-.search-buttons .search-wrapper-ingredients .close-dropdown-ustensiles,
+.search-buttons .search-wrapper-ingredients .close-dropdown-ustensils,
 .search-buttons .search-wrapper-appliances .close-dropdown-ingredients,
 .search-buttons .search-wrapper-appliances .close-dropdown-appliances,
-.search-buttons .search-wrapper-appliances .close-dropdown-ustensiles,
-.search-buttons .search-wrapper-ustensiles .close-dropdown-ingredients,
-.search-buttons .search-wrapper-ustensiles .close-dropdown-appliances,
-.search-buttons .search-wrapper-ustensiles .close-dropdown-ustensiles {
+.search-buttons .search-wrapper-appliances .close-dropdown-ustensils,
+.search-buttons .search-wrapper-ustensils .close-dropdown-ingredients,
+.search-buttons .search-wrapper-ustensils .close-dropdown-appliances,
+.search-buttons .search-wrapper-ustensils .close-dropdown-ustensils {
   transition: all 0.2s ease-in-out;
   margin: 0 10px;
   z-index: 600;
@@ -12267,19 +12267,19 @@ input {
 
 .search-buttons .search-wrapper-ingredients .ingredients-text,
 .search-buttons .search-wrapper-ingredients .appliances-text,
-.search-buttons .search-wrapper-ingredients .ustensiles-text,
+.search-buttons .search-wrapper-ingredients .ustensils-text,
 .search-buttons .search-wrapper-appliances .ingredients-text,
 .search-buttons .search-wrapper-appliances .appliances-text,
-.search-buttons .search-wrapper-appliances .ustensiles-text,
-.search-buttons .search-wrapper-ustensiles .ingredients-text,
-.search-buttons .search-wrapper-ustensiles .appliances-text,
-.search-buttons .search-wrapper-ustensiles .ustensiles-text {
+.search-buttons .search-wrapper-appliances .ustensils-text,
+.search-buttons .search-wrapper-ustensils .ingredients-text,
+.search-buttons .search-wrapper-ustensils .appliances-text,
+.search-buttons .search-wrapper-ustensils .ustensils-text {
   pointer-events: none;
 }
 
 .search-buttons .search-wrapper-ingredients input,
 .search-buttons .search-wrapper-appliances input,
-.search-buttons .search-wrapper-ustensiles input {
+.search-buttons .search-wrapper-ustensils input {
   z-index: 200;
   width: 100px;
   background-color: transparent;
@@ -12289,31 +12289,31 @@ input {
 
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appliances .search-list-block-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ingredients {
+.search-buttons .search-wrapper-ustensils .search-list-block-ingredients {
   background-color: #3282f7;
 }
 
 .search-buttons .search-wrapper-ingredients .search-list-block-appliances,
 .search-buttons .search-wrapper-appliances .search-list-block-appliances,
-.search-buttons .search-wrapper-ustensiles .search-list-block-appliances {
+.search-buttons .search-wrapper-ustensils .search-list-block-appliances {
   background-color: #68d9a4;
 }
 
-.search-buttons .search-wrapper-ingredients .search-list-block-ustensiles,
-.search-buttons .search-wrapper-appliances .search-list-block-ustensiles,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ustensiles {
+.search-buttons .search-wrapper-ingredients .search-list-block-ustensils,
+.search-buttons .search-wrapper-appliances .search-list-block-ustensils,
+.search-buttons .search-wrapper-ustensils .search-list-block-ustensils {
   background-color: #ed6454;
 }
 
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-ingredients .search-list-block-appliances,
-.search-buttons .search-wrapper-ingredients .search-list-block-ustensiles,
+.search-buttons .search-wrapper-ingredients .search-list-block-ustensils,
 .search-buttons .search-wrapper-appliances .search-list-block-ingredients,
 .search-buttons .search-wrapper-appliances .search-list-block-appliances,
-.search-buttons .search-wrapper-appliances .search-list-block-ustensiles,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-list-block-appliances,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ustensiles {
+.search-buttons .search-wrapper-appliances .search-list-block-ustensils,
+.search-buttons .search-wrapper-ustensils .search-list-block-ingredients,
+.search-buttons .search-wrapper-ustensils .search-list-block-appliances,
+.search-buttons .search-wrapper-ustensils .search-list-block-ustensils {
   position: absolute;
   top: 54px;
   left: 0;
@@ -12327,34 +12327,34 @@ input {
 
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appliances .search-list-block-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ingredients {
+.search-buttons .search-wrapper-ustensils .search-list-block-ingredients {
   scrollbar-color: #053b8b #3282f7;
   scrollbar-width: thin;
 }
 
 .search-buttons .search-wrapper-ingredients .search-list-block-appliances,
 .search-buttons .search-wrapper-appliances .search-list-block-appliances,
-.search-buttons .search-wrapper-ustensiles .search-list-block-appliances {
+.search-buttons .search-wrapper-ustensils .search-list-block-appliances {
   scrollbar-color: #228657 #68d9a4;
   scrollbar-width: thin;
 }
 
-.search-buttons .search-wrapper-ingredients .search-list-block-ustensiles,
-.search-buttons .search-wrapper-appliances .search-list-block-ustensiles,
-.search-buttons .search-wrapper-ustensiles .search-list-block-ustensiles {
+.search-buttons .search-wrapper-ingredients .search-list-block-ustensils,
+.search-buttons .search-wrapper-appliances .search-list-block-ustensils,
+.search-buttons .search-wrapper-ustensils .search-list-block-ustensils {
   scrollbar-color: #981e10 #ed6454;
   scrollbar-width: thin;
 }
 
 .search-buttons .search-wrapper-ingredients .search-list-ingredients,
 .search-buttons .search-wrapper-ingredients .search-list-appliances,
-.search-buttons .search-wrapper-ingredients .search-list-ustensiles,
+.search-buttons .search-wrapper-ingredients .search-list-ustensils,
 .search-buttons .search-wrapper-appliances .search-list-ingredients,
 .search-buttons .search-wrapper-appliances .search-list-appliances,
-.search-buttons .search-wrapper-appliances .search-list-ustensiles,
-.search-buttons .search-wrapper-ustensiles .search-list-ingredients,
-.search-buttons .search-wrapper-ustensiles .search-list-appliances,
-.search-buttons .search-wrapper-ustensiles .search-list-ustensiles {
+.search-buttons .search-wrapper-appliances .search-list-ustensils,
+.search-buttons .search-wrapper-ustensils .search-list-ingredients,
+.search-buttons .search-wrapper-ustensils .search-list-appliances,
+.search-buttons .search-wrapper-ustensils .search-list-ustensils {
   width: 100%;
   margin-right: 40px;
   display: grid;
@@ -12363,20 +12363,20 @@ input {
 
 .search-buttons .search-wrapper-ingredients .expand-search-list,
 .search-buttons .search-wrapper-appliances .expand-search-list,
-.search-buttons .search-wrapper-ustensiles .expand-search-list {
+.search-buttons .search-wrapper-ustensils .expand-search-list {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .search-buttons .search-wrapper-ingredients ul,
 .search-buttons .search-wrapper-appliances ul,
-.search-buttons .search-wrapper-ustensiles ul {
+.search-buttons .search-wrapper-ustensils ul {
   list-style: none;
   padding: 0px;
 }
 
 .search-buttons .search-wrapper-ingredients ul li,
 .search-buttons .search-wrapper-appliances ul li,
-.search-buttons .search-wrapper-ustensiles ul li {
+.search-buttons .search-wrapper-ustensils ul li {
   margin: 10px;
   margin-bottom: 10px;
   display: inline;

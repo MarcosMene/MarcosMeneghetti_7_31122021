@@ -16,9 +16,9 @@ function filterListTagsbyInput() {
     ".search-item-appliances"
   );
 
-  //  html elements ustensiles
-  const inputUstensiles = document.getElementById("ustensiles");
-  const listUstensilesLi = document.querySelectorAll(".search-item-ustensils");
+  //  html elements ustensils
+  const inputUstensils = document.getElementById("ustensils");
+  const listUstensilsLi = document.querySelectorAll(".search-item-ustensils");
 
   //  ATTACH KEY UP LISTENER TO SEARCH BOX
   inputIngredients.onkeyup = () => {
@@ -53,14 +53,14 @@ function filterListTagsbyInput() {
   };
 
   //  ATTACH KEY UP LISTENER TO SEARCH BOX
-  inputUstensiles.onkeyup = () => {
+  inputUstensils.onkeyup = () => {
     // GET CURRENT SEARCH TERM
-    let searchinputUstensilesList = inputUstensiles.value.toLowerCase();
+    let searchinputUstensilsList = inputUstensils.value.toLowerCase();
 
     // LOOP THROUGH LIST ITEMS - ONLY SHOW THOSE THAT MATCH SEARCH
-    for (let i of listUstensilesLi) {
+    for (let i of listUstensilsLi) {
       let item = i.innerHTML.toLowerCase();
-      if (item.indexOf(searchinputUstensilesList) == -1) {
+      if (item.indexOf(searchinputUstensilsList) == -1) {
         i.style.display = "none";
       } else {
         i.style.display = "";
@@ -78,10 +78,11 @@ const researchName = [];
 
 let ingredientFinal = [];
 let applianceFinal = [];
-let ustensilesFinal = [];
+let ustensilsFinal = [];
 let results = [];
 let inputValue = [];
 let temp = [];
+let tempFinal = [];
 
 // remove elements from list
 
@@ -90,96 +91,6 @@ let temp = [];
 createMiniTagWithItemList();
 
 // console.log(recipes)
-
-function createList(inputValue) {
-  inputValue.forEach((value) => {
-    if (inputValue.length) {
-      results = recipes.filter((obj) => {
-        return (
-          obj.name.includes(value) ||
-          obj.description.includes(value) ||
-          obj.ingredients.find((ingredient) =>
-            ingredient.ingredient.includes(value)
-          ) ||
-          obj.ustensils.includes(value) ||
-          obj.appliance.includes(value)
-        );
-      });
-
-      // console.log(results)
-
-      results.forEach((recipe) => {
-        if (recipe.name.length) {
-          researchName.push(recipe.name);
-        }
-
-        if (recipe.ingredients.length) {
-          results.forEach((recipe) => {
-            recipe.ingredients.forEach((ingredient) => {
-              researchIngredient.push(ingredient.ingredient);
-            });
-          });
-        }
-
-        if (recipe.appliance.length) {
-          researchAppliance.push(recipe.appliance);
-        }
-
-        if (recipe.ustensils.length) {
-          for (u = 0; u < recipe.ustensils.length; u++) {
-            researchustensils.push(recipe.ustensils[u]);
-          }
-        }
-      });
-
-      ingredientFinal = [...new Set(researchIngredient)];
-
-      for (let i = 0; i < ingredientFinal.length; i++) {
-        for (let j = 0; j < inputValue.length; j++) {
-          if (ingredientFinal[i] === inputValue[j]) {
-            ingredientFinal.splice(i, 1);
-          }
-        }
-      }
-
-      if (inputValue.length > 1) {
-        for (let i = 0; i < ingredientFinal.length; i++) {
-          for (let j = 0; j < temp.length; j++) {
-            if (ingredientFinal[i] === temp[j]) {
-              ingredientFinal.splice(i, 1);
-            }
-          }
-        }
-      }
-
-      applianceFinal = [...new Set(researchAppliance)];
-
-      for (let i = 0; i < applianceFinal.length; i++) {
-        for (let j = 0; j < inputValue.length; j++) {
-          if (applianceFinal[i] === inputValue[j]) {
-            applianceFinal.splice(i, 1);
-          }
-        }
-      }
-
-      ustensilesFinal = [...new Set(researchustensils)];
-
-      for (let i = 0; i < ustensilesFinal.length; i++) {
-        for (let j = 0; j < inputValue.length; j++)
-          if (ustensilesFinal[i] === inputValue[j]) {
-            ustensilesFinal.splice(i, 1);
-          }
-      }
-
-      console.log(temp);
-    }
-  });
-}
-
-function createMiniTagWithItemList() {
-  clickItems();
-  createMiniTags();
-}
 
 function clickItems() {
   const listItemIngredients = document.querySelectorAll(
@@ -191,11 +102,7 @@ function clickItems() {
       createList(inputValue); //call function to filter by list names
       console.log(i.innerText);
       console.log(inputValue);
-      // let myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
-      // console.log(myIngredientsTags);
-      // i.remove();
-      temp.push(ingredientFinal);
-      console.log(temp);
+
       ingredientFinal.forEach((element) => {
         for (i = 0; i < listItemIngredients.length; i++) {
           listItemIngredients[i].remove();
@@ -223,28 +130,119 @@ function clickItems() {
           searchlistAppliance.append(domAppliance);
         });
 
-        // Ustensiles
-        const listUstensilesLi = document.querySelectorAll(
+        // Ustensils
+        const listUstensilsLi = document.querySelectorAll(
           ".search-item-ustensils"
         );
-        for (i = 0; i < listUstensilesLi.length; i++) {
-          listUstensilesLi[i].remove();
+        for (i = 0; i < listUstensilsLi.length; i++) {
+          listUstensilsLi[i].remove();
         }
+
+        ustensilsFinal.forEach((element) => {
+          const searchListUstensils = document.querySelector(
+            ".search-list-ustensils"
+          );
+          const domUstensils = listsDOM(element, "ustensils");
+          searchListUstensils.append(domUstensils);
+        });
       });
       createMiniTagWithItemList();
 
-      ustensilesFinal.forEach((element) => {
-        const searchListUstensiles = document.querySelector(
-          ".search-list-ustensiles"
-        );
-        const domUstensiles = listsDOM(element, "ustensiles");
-        searchListUstensiles.append(domUstensiles);
-      });
       console.log(inputValue);
       console.log(ingredientFinal);
       console.log(applianceFinal);
-      console.log(ustensilesFinal);
+      console.log(ustensilsFinal);
       filterListTagsbyInput();
     });
   }
+}
+
+function createList(inputValue) {
+  inputValue.forEach((value) => {
+    if (inputValue.length) {
+      results = recipes.filter((obj) => {
+        return (
+          obj.name.includes(value) ||
+          obj.description.includes(value) ||
+          obj.ingredients.find((ingredient) =>
+            ingredient.ingredient.includes(value)
+          ) ||
+          obj.ustensils.includes(value) ||
+          obj.appliance.includes(value)
+        );
+      });
+
+      // for each recipe
+      results.forEach((recipe) => {
+        temp = [];
+        ingredientFinal = [];
+        if (recipe.name.length) {
+          researchName.push(recipe.name);
+        }
+
+        // find ingredients
+        if (recipe.ingredients.length) {
+          results.forEach((recipe) => {
+            recipe.ingredients.forEach((ingredient) => {
+              researchIngredient.push(ingredient.ingredient);
+              temp.push(ingredient.ingredient);
+              tempFinal = [...new Set(temp)];
+            });
+          });
+        }
+        console.log(temp);
+        console.log(tempFinal);
+        // find appliance for ingredients
+        if (recipe.appliance.length) {
+          researchAppliance.push(recipe.appliance);
+        }
+
+        // find ustensils for ingredients
+        if (recipe.ustensils.length) {
+          for (u = 0; u < recipe.ustensils.length; u++) {
+            researchustensils.push(recipe.ustensils[u]);
+          }
+        }
+      });
+
+      console.log(ingredientFinal);
+      console.log(researchustensils);
+
+      const itemsWitoutInputValue = tempFinal.filter(
+        (x) => inputValue.indexOf(x) === -1
+      );
+      console.log(itemsWitoutInputValue);
+
+      ingredientFinal = [...itemsWitoutInputValue];
+      console.log(ingredientFinal);
+
+      // APPLIANCES
+
+      applianceFinal = [...new Set(researchAppliance)];
+
+      for (let i = 0; i < applianceFinal.length; i++) {
+        for (let j = 0; j < inputValue.length; j++) {
+          if (applianceFinal[i] === inputValue[j]) {
+            applianceFinal.splice(i, 1);
+          }
+        }
+      }
+
+      ustensilsFinal = [...new Set(researchustensils)];
+      console.log(ustensilsFinal);
+
+      for (let i = 0; i < ustensilsFinal.length; i++) {
+        for (let j = 0; j < inputValue.length; j++)
+          if (ustensilsFinal[i] === inputValue[j]) {
+            ustensilsFinal.splice(i, 1);
+          }
+      }
+      console.log(ustensilsFinal);
+    }
+  });
+}
+
+function createMiniTagWithItemList() {
+  clickItems();
+  createMiniTags();
 }

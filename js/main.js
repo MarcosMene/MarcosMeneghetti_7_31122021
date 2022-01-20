@@ -89,11 +89,9 @@ const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
 // // remove repeated words in the array
 // const listUstensilsTag = new Set(myUstensilsTags);
 myUstensilsTags.forEach((element) => {
-  const searchlistUstensiles = document.querySelector(
-    ".search-list-ustensiles"
-  );
-  const domUstensiles = listsDOM(element, "ustensils");
-  searchlistUstensiles.append(domUstensiles);
+  const searchlistUstensils = document.querySelector(".search-list-ustensils");
+  const domUstensils = listsDOM(element, "ustensils");
+  searchlistUstensils.append(domUstensils);
 });
 
 //******** */
@@ -146,19 +144,17 @@ function createMiniTags() {
     });
   }
   // Ustensils
-  const listItemUstensiles = document.querySelectorAll(
-    ".search-item-ustensils"
-  );
+  const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
-  let listTagUstensiles = [];
-  for (let i = 0; i < listItemUstensiles.length; i++) {
-    listItemUstensiles[i].addEventListener("click", (e) => {
-      listItemUstensiles[i].remove(); //remove element list
+  let listTagUstensils = [];
+  for (let i = 0; i < listItemUstensils.length; i++) {
+    listItemUstensils[i].addEventListener("click", (e) => {
+      listItemUstensils[i].remove(); //remove element list
 
-      listTagUstensiles.push(listItemUstensiles[i]);
+      listTagUstensils.push(listItemUstensils[i]);
 
       const miniTagsChild = minitagsDOM(
-        listItemUstensiles[i].innerHTML,
+        listItemUstensils[i].innerHTML,
         "danger"
       );
       miniTags.appendChild(miniTagsChild);
