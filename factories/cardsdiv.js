@@ -14,7 +14,7 @@ function cardsFactory(data) {
 
   function cardsRecipesDOM() {
     const wrapper = document.createElement("div");
-    wrapper.classList.add("col-sm-6", "col-lg-4", "mb-5");
+    wrapper.classList.add("col-sm-6", "col-lg-4", "mb-5", "card-recipe");
 
     let elementCard = "";
     elementCard += `

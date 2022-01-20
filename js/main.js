@@ -1,5 +1,3 @@
-// import recipes from "../data/recipes.js";
-
 // get all elements to create tag lists ingredients/appliance/ustensils
 function getElementsInRecipes(recipes, elementToGet) {
   let list = [];
@@ -15,7 +13,7 @@ function getElementsInRecipes(recipes, elementToGet) {
           list.push(...ingredientsMap);
         }
       });
-      listreduced = [...new Set(list)];
+      listreduced = [...new Set(list)]; //remove repeated ingredients
 
       return listreduced;
 
@@ -27,7 +25,7 @@ function getElementsInRecipes(recipes, elementToGet) {
           list.push(applianceMap);
         }
       });
-      listreduced = [...new Set(list)];
+      listreduced = [...new Set(list)]; //remove repeated appliance
 
       return listreduced;
 
@@ -52,10 +50,10 @@ function getElementsInRecipes(recipes, elementToGet) {
 //******** */
 
 const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
-// remove repeated words in the array
-const listIngredientsTag = new Set(myIngredientsTags);
 
-listIngredientsTag.forEach((element) => {
+// const listIngredientsTag = new Set(myIngredientsTags);
+
+myIngredientsTags.forEach((element) => {
   const searchlistIngredients = document.querySelector(
     ".search-list-ingredients"
   );
@@ -69,14 +67,16 @@ listIngredientsTag.forEach((element) => {
 //  for appliance
 //******** */
 
-const myAppareilsTags = getElementsInRecipes(recipes, "appliance");
-// remove repeated words in the array
-const listApplianceTag = new Set(myAppareilsTags);
+let myappliancesTags = getElementsInRecipes(recipes, "appliance");
+// // remove repeated words in the array
+// let listApplianceTag = new Set(myappliancesTags);
 
-listApplianceTag.forEach((element) => {
-  const searchlistAppliance = document.querySelector(".search-list-appareils");
-  const domAppliance = listsDOM(element, "appareils");
-  searchlistAppliance.append(domAppliance);
+myappliancesTags.forEach((element) => {
+  const searchListappliances = document.querySelector(
+    ".search-list-appliances"
+  );
+  const domAppliance = listsDOM(element, "appliances");
+  searchListappliances.append(domAppliance);
 });
 
 //******** */
@@ -86,9 +86,9 @@ listApplianceTag.forEach((element) => {
 //******** */
 
 const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
-// remove repeated words in the array
-const listUstensilsTag = new Set(myUstensilsTags);
-listUstensilsTag.forEach((element) => {
+// // remove repeated words in the array
+// const listUstensilsTag = new Set(myUstensilsTags);
+myUstensilsTags.forEach((element) => {
   const searchlistUstensiles = document.querySelector(
     ".search-list-ustensiles"
   );
@@ -100,82 +100,87 @@ listUstensilsTag.forEach((element) => {
 // Create
 // minitags
 //******** */
+function createMiniTags() {
+  // ingredients
+  const listItemIngredients = document.querySelectorAll(
+    ".search-item-ingredients"
+  );
 
-// ingredients
-const listItemIngredients = document.querySelectorAll(
-  ".search-item-ingredients"
-);
-const miniTags = document.querySelector("#mini-tags");
-for (let i = 0; i < listItemIngredients.length; i++) {
-  listItemIngredients[i].addEventListener("click", (e) => {
-    e.preventDefault();
+  let listTagIngredients = [];
+  const miniTags = document.querySelector("#mini-tags");
+  for (let i = 0; i < listItemIngredients.length; i++) {
+    listItemIngredients[i].addEventListener("click", (e) => {
+      listTagIngredients.push(listItemIngredients[i]);
 
-    const miniTagsChild = minitagsDOM(
-      listItemIngredients[i].innerHTML,
-      "primary"
-    );
-    miniTags.appendChild(miniTagsChild);
+      const miniTagsChild = minitagsDOM(
+        listItemIngredients[i].innerHTML,
+        "primary"
+      );
+      miniTags.appendChild(miniTagsChild);
+      // listItemIngredients[i].remove(); //remove element list
+      // remove minitag on click
+      removeMiniTag();
+    });
+  }
 
-    const removeMiniTag = document.querySelectorAll(".tag-button");
-    console.log(removeMiniTag);
-    for (let j = 0; j < removeMiniTag.length; j++)
-      removeMiniTag[j].addEventListener("click", () => {
-        removeMiniTag[j].remove();
-      });
-  });
+  // Appareil
+  const listItemAppliances = document.querySelectorAll(
+    ".search-item-appliances"
+  );
+
+  let listTagAppliances = [];
+  for (let i = 0; i < listItemAppliances.length; i++) {
+    listItemAppliances[i].addEventListener("click", (e) => {
+      listItemAppliances[i].remove(); //remove element list
+
+      listTagAppliances.push(listItemAppliances[i]);
+
+      const miniTagsChild = minitagsDOM(
+        listItemAppliances[i].innerHTML,
+        "success"
+      );
+      miniTags.appendChild(miniTagsChild);
+
+      // remove minitag on click
+      removeMiniTag();
+    });
+  }
+  // Ustensils
+  const listItemUstensiles = document.querySelectorAll(
+    ".search-item-ustensils"
+  );
+
+  let listTagUstensiles = [];
+  for (let i = 0; i < listItemUstensiles.length; i++) {
+    listItemUstensiles[i].addEventListener("click", (e) => {
+      listItemUstensiles[i].remove(); //remove element list
+
+      listTagUstensiles.push(listItemUstensiles[i]);
+
+      const miniTagsChild = minitagsDOM(
+        listItemUstensiles[i].innerHTML,
+        "danger"
+      );
+      miniTags.appendChild(miniTagsChild);
+
+      removeMiniTag();
+    });
+  }
 }
-
-// Appareil
-const listItemAppliances = document.querySelectorAll(".search-item-appareils");
-
-for (let i = 0; i < listItemAppliances.length; i++) {
-  listItemAppliances[i].addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const miniTagsChild = minitagsDOM(
-      listItemAppliances[i].innerHTML,
-      "success"
-    );
-    miniTags.appendChild(miniTagsChild);
-    const removeMiniTag = document.querySelectorAll(".tag-button");
-    console.log(removeMiniTag);
-    for (let j = 0; j < removeMiniTag.length; j++)
-      removeMiniTag[j].addEventListener("click", () => {
-        removeMiniTag[j].remove();
-      });
-  });
-}
-// Ustensils
-const listItemUstensiles = document.querySelectorAll(".search-item-ustensils");
-
-for (let i = 0; i < listItemUstensiles.length; i++) {
-  listItemUstensiles[i].addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const miniTagsChild = minitagsDOM(
-      listItemUstensiles[i].innerHTML,
-      "danger"
-    );
-    miniTags.appendChild(miniTagsChild);
-    const removeMiniTag = document.querySelectorAll(".tag-button");
-    console.log(removeMiniTag);
-    for (let j = 0; j < removeMiniTag.length; j++)
-      removeMiniTag[j].addEventListener("click", () => {
-        removeMiniTag[j].remove();
-      });
-  });
-}
+// createMiniTags();
 
 //******** */
 //Create
 //Cards
 //recettes
 //******** */
+function createCardRecipes() {
+  const rowCardsRecipes = document.querySelector(".cards-recipes");
 
-const rowCardsRecipes = document.querySelector(".cards-recipes");
-
-recipes.forEach((recipe) => {
-  const cardRecipeModel = cardsFactory(recipe);
-  const recipeCardDOM = cardRecipeModel.cardsRecipesDOM();
-  rowCardsRecipes.appendChild(recipeCardDOM);
-});
+  recipes.forEach((recipe) => {
+    const cardRecipeModel = cardsFactory(recipe);
+    const recipeCardDOM = cardRecipeModel.cardsRecipesDOM();
+    rowCardsRecipes.appendChild(recipeCardDOM);
+  });
+}
+createCardRecipes();

@@ -102,7 +102,7 @@ label {
     }
 
     .card-body {
-        height: 300px;
+        height: 280px;
 
 
         .card-recette {
@@ -117,13 +117,18 @@ label {
         .card-body-description {
             font-size: 12px;
             width: 100%;
-            // white-space: normal;
             text-align: justify;
             text-justify: inter-word;
-            overflow: hidden;
             height: 100%;
-            text-overflow: ellipsis;
 
+
+            p {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 10;
+            }
 
         }
 
@@ -186,7 +191,7 @@ input {
 
 
     .search-wrapper-ingredients,
-    .search-wrapper-appareils,
+    .search-wrapper-appliances,
     .search-wrapper-ustensiles {
         display: flex;
         align-items: center;
@@ -200,7 +205,7 @@ input {
 
 
         .search-control-ingredients,
-        .search-control-appareils,
+        .search-control-appliances,
         .search-control-ustensiles {
             display: flex;
             align-items: center;
@@ -211,7 +216,7 @@ input {
         }
 
         .close-dropdown-ingredients,
-        .close-dropdown-appareils,
+        .close-dropdown-appliances,
         .close-dropdown-ustensiles {
 
             transition: all .2s ease-in-out;
@@ -222,7 +227,7 @@ input {
         }
 
         .ingredients-text,
-        .appareils-text,
+        .appliances-text,
         .ustensiles-text {
             pointer-events: none;
 
@@ -242,7 +247,7 @@ input {
             background-color: $primary;
         }
 
-        .search-list-block-appareils {
+        .search-list-block-appliances {
             background-color: $success;
         }
 
@@ -253,7 +258,7 @@ input {
 
 
         .search-list-block-ingredients,
-        .search-list-block-appareils,
+        .search-list-block-appliances,
         .search-list-block-ustensiles {
             position: absolute;
             top: 54px;
@@ -273,7 +278,7 @@ input {
         }
 
 
-        .search-list-block-appareils {
+        .search-list-block-appliances {
             scrollbar-color: darken($success, 30%) $success;
             scrollbar-width: thin;
 
@@ -287,7 +292,7 @@ input {
         }
 
         .search-list-ingredients,
-        .search-list-appareils,
+        .search-list-appliances,
         .search-list-ustensiles {
             width: 100%;
             margin-right: 40px;
