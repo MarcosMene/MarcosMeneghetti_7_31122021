@@ -229,11 +229,11 @@ document.addEventListener("click", (evt) => {
   searchListUstensils.classList.remove("expand-search-list");
 
   // verify if list ustensils contains display none
-  const searchListUstensilsLi = document.querySelectorAll(
+  const searchlistItemUstensils = document.querySelectorAll(
     ".search-list-ustensils li"
   );
   // replace display none to display block for list ustensils
-  searchListUstensilsLi.forEach((list) => {
+  searchlistItemUstensils.forEach((list) => {
     if (list.style.display === "none") {
       list.style.display = "block";
     }

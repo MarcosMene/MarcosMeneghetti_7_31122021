@@ -18,7 +18,7 @@ function filterListTagsbyInput() {
 
   //  html elements ustensils
   const inputUstensils = document.getElementById("ustensils");
-  const listUstensilsLi = document.querySelectorAll(".search-item-ustensils");
+  const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
   //  ATTACH KEY UP LISTENER TO SEARCH BOX
   inputIngredients.onkeyup = () => {
@@ -58,7 +58,7 @@ function filterListTagsbyInput() {
     let searchinputUstensilsList = inputUstensils.value.toLowerCase();
 
     // LOOP THROUGH LIST ITEMS - ONLY SHOW THOSE THAT MATCH SEARCH
-    for (let i of listUstensilsLi) {
+    for (let i of listItemUstensils) {
       let item = i.innerHTML.toLowerCase();
       if (item.indexOf(searchinputUstensilsList) == -1) {
         i.style.display = "none";
@@ -131,11 +131,11 @@ function clickItems() {
         });
 
         // Ustensils
-        const listUstensilsLi = document.querySelectorAll(
+        const listItemUstensils = document.querySelectorAll(
           ".search-item-ustensils"
         );
-        for (i = 0; i < listUstensilsLi.length; i++) {
-          listUstensilsLi[i].remove();
+        for (i = 0; i < listItemUstensils.length; i++) {
+          listItemUstensils[i].remove();
         }
 
         ustensilsFinal.forEach((element) => {
@@ -192,6 +192,7 @@ function createList(inputValue) {
         }
         console.log(temp);
         console.log(tempFinal);
+
         // find appliance for ingredients
         if (recipe.appliance.length) {
           researchAppliance.push(recipe.appliance);

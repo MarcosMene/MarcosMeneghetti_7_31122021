@@ -9,36 +9,30 @@ function getElementsInRecipes(recipes, elementToGet) {
           const ingredientsMap = recipe.ingredients.map((ingr) =>
             ingr.ingredient.toLowerCase()
           );
-
           list.push(...ingredientsMap);
         }
       });
       listreduced = [...new Set(list)]; //remove repeated ingredients
-
       return listreduced;
 
     case "appliance":
       recipes.forEach((recipe) => {
         if (recipe.appliance.length) {
           const applianceMap = recipe.appliance.toLowerCase();
-
           list.push(applianceMap);
         }
       });
       listreduced = [...new Set(list)]; //remove repeated appliance
-
       return listreduced;
 
     case "ustensils":
       recipes.forEach((recipe) => {
         if (recipe.ustensils.length) {
           const ustensilsMap = recipe.ustensils.map((ust) => ust.toLowerCase());
-
           list.push(...ustensilsMap);
         }
       });
       listreduced = [...new Set(list)];
-
       return listreduced;
   }
 }
@@ -48,51 +42,46 @@ function getElementsInRecipes(recipes, elementToGet) {
 //  elements for
 //  ingredients
 //******** */
+function CreateListElements() {
+  const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
+  myIngredientsTags.forEach((element) => {
+    const searchlistIngredients = document.querySelector(
+      ".search-list-ingredients"
+    );
+    const domIngredients = listsDOM(element, "ingredients");
+    searchlistIngredients.append(domIngredients);
+  });
 
-const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
+  //******** */
+  // Create
+  // list elements
+  //  for appliance
+  //******** */
 
-// const listIngredientsTag = new Set(myIngredientsTags);
+  let myappliancesTags = getElementsInRecipes(recipes, "appliance");
+  myappliancesTags.forEach((element) => {
+    const searchListappliances = document.querySelector(
+      ".search-list-appliances"
+    );
+    const domAppliance = listsDOM(element, "appliances");
+    searchListappliances.append(domAppliance);
+  });
 
-myIngredientsTags.forEach((element) => {
-  const searchlistIngredients = document.querySelector(
-    ".search-list-ingredients"
-  );
-  const domIngredients = listsDOM(element, "ingredients");
-  searchlistIngredients.append(domIngredients);
-});
+  //******** */
+  // Create list
+  // elements for
+  // ustensils
+  //******** */
 
-//******** */
-// Create
-// list elements
-//  for appliance
-//******** */
-
-let myappliancesTags = getElementsInRecipes(recipes, "appliance");
-// // remove repeated words in the array
-// let listApplianceTag = new Set(myappliancesTags);
-
-myappliancesTags.forEach((element) => {
-  const searchListappliances = document.querySelector(
-    ".search-list-appliances"
-  );
-  const domAppliance = listsDOM(element, "appliances");
-  searchListappliances.append(domAppliance);
-});
-
-//******** */
-// Create list
-// elements for
-// ustensils
-//******** */
-
-const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
-// // remove repeated words in the array
-// const listUstensilsTag = new Set(myUstensilsTags);
-myUstensilsTags.forEach((element) => {
-  const searchlistUstensils = document.querySelector(".search-list-ustensils");
-  const domUstensils = listsDOM(element, "ustensils");
-  searchlistUstensils.append(domUstensils);
-});
+  const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
+  myUstensilsTags.forEach((element) => {
+    const searchlistUstensils = document.querySelector(
+      ".search-list-ustensils"
+    );
+    const domUstensils = listsDOM(element, "ustensils");
+    searchlistUstensils.append(domUstensils);
+  });
+}
 
 //******** */
 // Create
@@ -179,4 +168,5 @@ function createCardRecipes() {
     rowCardsRecipes.appendChild(recipeCardDOM);
   });
 }
+CreateListElements();
 createCardRecipes();
