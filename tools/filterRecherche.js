@@ -7,18 +7,24 @@ function globalSearchInput(value) {
     if (e.target.value.length < 3) {
       const cardRecipe = document.querySelectorAll(".card-recipe");
       if (cardRecipe.length) {
-        for (i = 0; i < cardRecipe.length; i++) {
-          cardRecipe[i].remove();
-        }
+        // for (i = 0; i < cardRecipe.length; i++) {
+        //   cardRecipe[i].remove();
+        // }
+        cardRecipe.forEach((element) => {
+          element.remove();
+        });
       }
       // call function create all card recipes for input <2
       createCardRecipesInput(recipes);
 
       // remove all items from the lists
       const listAllItems = document.querySelectorAll(".search-item");
-      for (i = 0; i < listAllItems.length; i++) {
-        listAllItems[i].remove();
-      }
+      // for (i = 0; i < listAllItems.length; i++) {
+      //   listAllItems[i].remove();
+      // }
+      listAllItems.forEach((item) => {
+        item.remove();
+      });
       CreateListElements();
     }
     //return values if input value > 2
@@ -42,16 +48,19 @@ function globalSearchInput(value) {
     // show/hide message no recipes
     const MessageNoRecette = document.querySelector(".message-no-recette");
     if (results.length === 0) {
-      MessageNoRecette.classList.remove("hide");
+      MessageNoRecette.style.display = "block";
     } else {
-      MessageNoRecette.classList.add("hide");
+      MessageNoRecette.style.display = "none";
     }
 
     // delete all cards
     const cardRecipe = document.querySelectorAll(".card-recipe");
-    for (i = 0; i < cardRecipe.length; i++) {
-      cardRecipe[i].remove();
-    }
+    // for (i = 0; i < cardRecipe.length; i++) {
+    //   cardRecipe[i].remove();
+    // }
+    cardRecipe.forEach((item) => {
+      item.remove();
+    });
 
     // create new cards
     const rowCardsRecipes = document.querySelector(".cards-recipes");
@@ -78,9 +87,12 @@ function populateTags(results) {
 
   // remove all items from the lists
   const listAllItems = document.querySelectorAll(".search-item");
-  for (i = 0; i < listAllItems.length; i++) {
-    listAllItems[i].remove();
-  }
+  // for (i = 0; i < listAllItems.length; i++) {
+  //   listAllItems[i].remove();
+  // }
+  listAllItems.forEach((item) => {
+    item.remove();
+  });
 
   // remove ingredients from de tag ingredient
 
@@ -113,9 +125,12 @@ function populateTags(results) {
   let ustensilsResult = [];
   results.forEach((recipe) => {
     if (recipe.ustensils.length) {
-      for (u = 0; u < recipe.ustensils.length; u++) {
-        ustensilsResult.push(recipe.ustensils[u]);
-      }
+      // for (u = 0; u < recipe.ustensils.length; u++) {
+      //   ustensilsResult.push(recipe.ustensils[u]);
+      // }
+      recipe.ustensils.forEach((item) => {
+        ustensilsResult.push(item);
+      });
     }
   });
   // remove ustensils from de tag appliance
