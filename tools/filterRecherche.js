@@ -14,6 +14,7 @@ function globalSearchInput(value) {
           element.remove();
         });
       }
+
       // call function create all card recipes for input <2
       createCardRecipesInput(recipes);
 
@@ -26,6 +27,7 @@ function globalSearchInput(value) {
         item.remove();
       });
       CreateListElements();
+      filterListTags();
     }
     //return values if input value > 2
     if (e.target.value.length > 2) {
@@ -41,6 +43,7 @@ function globalSearchInput(value) {
 
       createCardRecipesInput(results);
       populateTags(results);
+      filterListTags();
     }
   });
 
@@ -76,12 +79,15 @@ function globalSearchInput(value) {
 function populateTags(results) {
   // get ingredients from results recipes
   let ingredientsResult = [];
+  let reducedIngredient = [];
   results.forEach((recipe) => {
     if (recipe.ingredients.length) {
       const ingredientsMapResult = recipe.ingredients.map((ingr) =>
         ingr.ingredient.toLowerCase()
       );
       ingredientsResult.push(...ingredientsMapResult);
+      reducedIngredient = [...new Set(ingredientsResult)]; //remove duplicates
+      console.log(reducedIngredient);
     }
   });
 
@@ -96,7 +102,7 @@ function populateTags(results) {
 
   // remove ingredients from de tag ingredient
 
-  ingredientsResult.forEach((element) => {
+  reducedIngredient.forEach((element) => {
     const searchlistIngredients = document.querySelector(
       ".search-list-ingredients"
     );
@@ -106,14 +112,17 @@ function populateTags(results) {
 
   // get appliances from results recipes
   let appliancesResult = [];
+  let reducedAppliance = [];
   results.forEach((recipe) => {
     if (recipe.appliance.length) {
       appliancesResult.push(recipe.appliance);
+      reducedAppliance = [...new Set(appliancesResult)]; //remove duplicates
+      console.log(reducedAppliance);
     }
   });
 
   // remove appliances from de tag appliance
-  appliancesResult.forEach((element) => {
+  reducedAppliance.forEach((element) => {
     const searchListappliances = document.querySelector(
       ".search-list-appliances"
     );
@@ -123,6 +132,7 @@ function populateTags(results) {
 
   // get ustensils from results recipes
   let ustensilsResult = [];
+  let reducedUstensils = [];
   results.forEach((recipe) => {
     if (recipe.ustensils.length) {
       // for (u = 0; u < recipe.ustensils.length; u++) {
@@ -130,11 +140,13 @@ function populateTags(results) {
       // }
       recipe.ustensils.forEach((item) => {
         ustensilsResult.push(item);
+        reducedUstensils = [...new Set(ustensilsResult)]; //remove duplicates
       });
+      console.log(recipe.ustensils);
     }
   });
   // remove ustensils from de tag appliance
-  ustensilsResult.forEach((element) => {
+  reducedUstensils.forEach((element) => {
     const searchListUstensils = document.querySelector(
       ".search-list-ustensils"
     );

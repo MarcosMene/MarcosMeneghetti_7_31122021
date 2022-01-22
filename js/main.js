@@ -37,12 +37,13 @@ function getElementsInRecipes(recipes, elementToGet) {
   }
 }
 
-//******** */
-//  Create list
-//  elements for
-//  ingredients
-//******** */
+//create list elements for ingredients/appliances/ustensils
 function CreateListElements() {
+  //******** */
+  //  Create list
+  //  elements for
+  //  ingredients
+  //******** */
   const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
   myIngredientsTags.forEach((element) => {
     const searchlistIngredients = document.querySelector(
