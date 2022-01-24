@@ -1776,16 +1776,14 @@ recipes = [
   },
 ];
 
-let results = [...recipes];
 const inputValueTest = "coco";
 
-results = recipes.filter((obj) => {
+let results = recipes.filter((obj) => {
   return (
-    obj.name.toLowerCase().includes(inputValueTest) ||
-    obj.description.toLowerCase().includes(inputValueTest) ||
+    obj.name.includes(inputValueTest) ||
+    obj.description.includes(inputValueTest) ||
     obj.ingredients.find((ingredient) =>
-      ingredient.ingredient.toLowerCase().includes(inputValueTest)
+      ingredient.ingredient.includes(inputValueTest)
     )
   );
 });
-console.log(results);
