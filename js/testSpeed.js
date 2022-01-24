@@ -1776,16 +1776,24 @@ recipes = [
   },
 ];
 
-let results = [...recipes];
 const inputValueTest = "coco";
+let resultat = [];
+for (i = 0; i < recipes.length; i++) {
+  if (recipes[i].name.toLowerCase().includes(inputValueTest)) {
+    resultat.push(recipes[i]);
+  } else if (recipes[i].description.toLowerCase().includes(inputValueTest)) {
+    resultat.push(recipes[i]);
+  } else {
+    let j = 0;
 
-results = recipes.filter((obj) => {
-  return (
-    obj.name.toLowerCase().includes(inputValueTest) ||
-    obj.description.toLowerCase().includes(inputValueTest) ||
-    obj.ingredients.find((ingredient) =>
-      ingredient.ingredient.toLowerCase().includes(inputValueTest)
-    )
-  );
-});
-console.log(results);
+    while (j < recipes[i].ingredients) {
+      if (recipes[i].ingredients[j].incluces(inputValueTest)) {
+        resultat.push(recipes[i].ingredients[j]);
+        break;
+      }
+      j++;
+    }
+  }
+}
+
+console.log(resultat);
