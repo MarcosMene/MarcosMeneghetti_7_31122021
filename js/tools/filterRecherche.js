@@ -7,9 +7,6 @@ function globalSearchInput(value) {
     if (e.target.value.length < 3) {
       const cardRecipe = document.querySelectorAll(".card-recipe");
       if (cardRecipe.length) {
-        // for (i = 0; i < cardRecipe.length; i++) {
-        //   cardRecipe[i].remove();
-        // }
         cardRecipe.forEach((element) => {
           element.remove();
         });
@@ -20,9 +17,6 @@ function globalSearchInput(value) {
 
       // remove all items from the lists
       const listAllItems = document.querySelectorAll(".search-item");
-      // for (i = 0; i < listAllItems.length; i++) {
-      //   listAllItems[i].remove();
-      // }
       listAllItems.forEach((item) => {
         item.remove();
       });
@@ -42,7 +36,6 @@ function globalSearchInput(value) {
         );
       });
       console.log(results);
-
       createCardRecipesInput(results);
       updateListTags(results);
       filterListTagsbyInputTag();
@@ -61,9 +54,6 @@ function globalSearchInput(value) {
 
     // delete all cards
     const cardRecipe = document.querySelectorAll(".card-recipe");
-    // for (i = 0; i < cardRecipe.length; i++) {
-    //   cardRecipe[i].remove();
-    // }
     cardRecipe.forEach((item) => {
       item.remove();
     });
@@ -95,15 +85,11 @@ function updateListTags(results) {
 
   // remove all items from the lists
   const listAllItems = document.querySelectorAll(".search-item");
-  // for (i = 0; i < listAllItems.length; i++) {
-  //   listAllItems[i].remove();
-  // }
   listAllItems.forEach((item) => {
     item.remove();
   });
 
   // remove ingredients from de tag ingredient
-
   reducedIngredient.forEach((element) => {
     const searchlistIngredients = document.querySelector(
       ".search-list-ingredients"
@@ -117,7 +103,9 @@ function updateListTags(results) {
   let reducedAppliance = [];
   results.forEach((recipe) => {
     if (recipe.appliance.length) {
-      appliancesResult.push(recipe.appliance);
+      const appliancesMapResult = recipe.appliance.toLowerCase();
+
+      appliancesResult.push(appliancesMapResult);
       reducedAppliance = [...new Set(appliancesResult)]; //remove duplicates
     }
   });
@@ -140,7 +128,7 @@ function updateListTags(results) {
       //   ustensilsResult.push(recipe.ustensils[u]);
       // }
       recipe.ustensils.forEach((item) => {
-        ustensilsResult.push(item);
+        ustensilsResult.push(item.toLowerCase());
         reducedUstensils = [...new Set(ustensilsResult)]; //remove duplicates
       });
     }

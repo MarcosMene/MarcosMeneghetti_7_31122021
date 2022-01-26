@@ -9,7 +9,9 @@ function minitagsDOM(value, color, type) {
   let miniTagCard = "";
   miniTagCard += `
   
-  <span class="mx-2 d-inline">${value}</span>
+  <span class="mx-2 d-inline">${
+    value.charAt(0).toUpperCase() + value.slice(1)
+  }</span>
   <i class="far fa-times-circle fa-lg close-tag"></i>
 
     `;

@@ -5,21 +5,21 @@
 let listMiniTags = [];
 let totalMiniTags = [];
 function createMiniTags() {
-  //recover all elements from miniTags
+  /*
+ *****
+Ingredients
+ ****
+ */
 
-  for (i = 0; i < listMiniTags.length; i++) {
-    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
-  }
-  totalMiniTags = [...new Set(totalMiniTags)];
+  const miniTags = document.querySelector("#mini-tags");
 
-  // ingredients
   const listItemIngredients = document.querySelectorAll(
     ".search-item-ingredients"
   );
 
-  const miniTags = document.querySelector("#mini-tags");
   for (let i = 0; i < listItemIngredients.length; i++) {
     listItemIngredients[i].addEventListener("click", (e) => {
+      listItemIngredients[i].remove();
       listMiniTags.push(listItemIngredients[i]);
 
       const miniTagsChild = minitagsDOM(
@@ -27,23 +27,30 @@ function createMiniTags() {
         "primary",
         "ingredients"
       );
+
       miniTags.appendChild(miniTagsChild);
-      searchByMiniTags("ingredients", listItemIngredients[i].innerText);
+      searchByMiniTags(
+        "ingredients",
+        listItemIngredients[i].innerText.toLowerCase()
+      );
 
       // remove minitag on click
       removeMiniTag();
     });
   }
 
-  // Appareil
+  /*
+ *****
+ Appliances
+ ****
+ */
   const listItemAppliances = document.querySelectorAll(
     ".search-item-appliances"
   );
 
-  //   let listTagAppliances = [];
   for (let i = 0; i < listItemAppliances.length; i++) {
     listItemAppliances[i].addEventListener("click", (e) => {
-      listItemAppliances[i].remove(); //remove element list
+      // listItemAppliances[i].remove(); //remove element list
 
       listMiniTags.push(listItemAppliances[i]);
 
@@ -52,44 +59,49 @@ function createMiniTags() {
         "success",
         "appliances"
       );
+
       miniTags.appendChild(miniTagsChild);
-      searchByMiniTags("appliance", listItemAppliances[i].innerText);
+      searchByMiniTags(
+        "appliance",
+        listItemAppliances[i].innerText.toLowerCase()
+      );
 
       // remove minitag on click
       removeMiniTag();
     });
   }
-  // Ustensils
+  /*
+ *****
+Ustensils
+ ****
+ */
   const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
-  // let listTagUstensils = [];
   for (let i = 0; i < listItemUstensils.length; i++) {
     listItemUstensils[i].addEventListener("click", (e) => {
-      listItemUstensils[i].remove(); //remove element list
+      // listItemUstensils[i].remove(); //remove element list
 
       listMiniTags.push(listItemUstensils[i]);
-
+      console.log(listItemUstensils[i]);
       const miniTagsChild = minitagsDOM(
         listItemUstensils[i].innerText.toLowerCase(),
         "danger",
         "ustensils"
       );
       miniTags.appendChild(miniTagsChild);
-      console.log(miniTags);
+      // console.log(miniTags);
       searchByMiniTags(
         "ustensils",
         listItemUstensils[i].innerText.toLowerCase()
       );
-
+      // remove minitag on click
       removeMiniTag();
     });
   }
-
-  // //recover all elements from miniTags
-  // let totalMiniTags = [];
-  // for (i = 0; i < listMiniTags.length; i++) {
-  //   totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
-  // }
-  // console.log(totalMiniTags);
-  // console.log(resultRecipesMiniTags);
+  //recover all elements from miniTags
+  for (i = 0; i < listMiniTags.length; i++) {
+    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
+  }
+  totalMiniTags = [...new Set(totalMiniTags)];
+  console.log(totalMiniTags);
 }

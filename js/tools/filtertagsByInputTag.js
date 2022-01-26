@@ -3,8 +3,6 @@
  tags */
 
 function filterListTagsbyInputTag() {
-  // const listItemsComplete = document.querySelectorAll(".search-item");
-
   //  html elements ingredients
   const inputIngredients = document.getElementById("ingredients");
   const listItemIngredients = document.querySelectorAll(

@@ -1,5 +1,5 @@
 let resultRecipesMiniTags = [];
-// let totalMiniTags = [];
+
 function searchByMiniTags(dataValue, value) {
   let valueLowCase = value.toLowerCase();
   switch (dataValue) {
@@ -9,22 +9,17 @@ function searchByMiniTags(dataValue, value) {
           (ingredient) => ingredient.ingredient.toLowerCase() === valueLowCase
         )
       );
-
       UpdateItemsFromMiniTags();
-
       return resultRecipesMiniTags;
 
     case "appliance":
       resultRecipesMiniTags = recipes.filter(
         (obj) => obj.appliance.toLowerCase() === valueLowCase
       );
-
       UpdateItemsFromMiniTags();
-
       return resultRecipesMiniTags;
-    case "ustensils":
-      // recipe.ustensils.map((ust) => ust.toLowerCase());
 
+    case "ustensils":
       resultRecipesMiniTags = recipes.filter((obj) =>
         obj.ustensils.find(
           (ustensil) => ustensil.toLowerCase() === valueLowCase
@@ -102,16 +97,20 @@ function UpdateItemsFromMiniTags() {
     createMiniTags();
     createCardRecipesMiniTags(resultRecipesMiniTags);
     removeElementsFromListItems();
-  } else {
     console.log(totalMiniTags);
     console.log(resultRecipesMiniTags);
+  } else {
     totalMiniTags.forEach((item) => {
+      console.log(totalMiniTags);
+
       let resultMultipleMiniTags = resultRecipesMiniTags.filter((obj) => {
         return obj.ingredients.find(
           (ingredient) =>
-            ingredient.ingredient.toLowerCase() === item ||
-            obj.appliance.toLowerCase() === item ||
-            obj.ustensils.find((ustensil) => ustensil.toLowerCase() === item)
+            ingredient.ingredient.toLowerCase().includes(item) ||
+            obj.appliance.toLowerCase().includes(item) ||
+            obj.ustensils.find((ustensil) =>
+              ustensil.toLowerCase().includes(item)
+            )
         );
       });
       console.log(resultMultipleMiniTags);
@@ -120,6 +119,8 @@ function UpdateItemsFromMiniTags() {
       createMiniTags();
       createCardRecipesMiniTags(resultMultipleMiniTags);
       removeElementsFromListItems();
+      // console.log(totalMiniTags);
+      // console.log(resultRecipesMiniTags);
     });
   }
 }
