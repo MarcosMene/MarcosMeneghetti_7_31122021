@@ -27,7 +27,8 @@ function globalSearchInput(value) {
         item.remove();
       });
       CreateListElements();
-      filterListTags();
+      filterListTagsbyInputTag();
+      createMiniTags();
     }
     //return values if input value > 2
     if (e.target.value.length > 2) {
@@ -42,8 +43,9 @@ function globalSearchInput(value) {
       });
 
       createCardRecipesInput(results);
-      populateTags(results);
-      filterListTags();
+      updateListTags(results);
+      filterListTagsbyInputTag();
+      createMiniTags();
     }
   });
 
@@ -76,7 +78,7 @@ function globalSearchInput(value) {
 }
 
 // update ingredients-appareil-ustensils
-function populateTags(results) {
+function updateListTags(results) {
   // get ingredients from results recipes
   let ingredientsResult = [];
   let reducedIngredient = [];
@@ -87,7 +89,6 @@ function populateTags(results) {
       );
       ingredientsResult.push(...ingredientsMapResult);
       reducedIngredient = [...new Set(ingredientsResult)]; //remove duplicates
-      console.log(reducedIngredient);
     }
   });
 
@@ -117,7 +118,6 @@ function populateTags(results) {
     if (recipe.appliance.length) {
       appliancesResult.push(recipe.appliance);
       reducedAppliance = [...new Set(appliancesResult)]; //remove duplicates
-      console.log(reducedAppliance);
     }
   });
 
@@ -142,7 +142,6 @@ function populateTags(results) {
         ustensilsResult.push(item);
         reducedUstensils = [...new Set(ustensilsResult)]; //remove duplicates
       });
-      console.log(recipe.ustensils);
     }
   });
   // remove ustensils from de tag appliance

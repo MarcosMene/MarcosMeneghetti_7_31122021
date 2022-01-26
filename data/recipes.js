@@ -1,4 +1,4 @@
-recipes = [
+const recipes = [
   {
     id: 1,
     name: "Limonade de Coco",
@@ -60,7 +60,7 @@ recipes = [
         quantity: 5,
       },
       {
-        ingredient: "Lait de coco",
+        ingredient: "Lait de Coco",
         quantity: 100,
         unit: "ml",
       },
@@ -213,7 +213,7 @@ recipes = [
         unit: "cl",
       },
       {
-        ingredient: "Sucre en poudre",
+        ingredient: "Sucre en Poudre",
         quantity: 100,
         unit: "grammes",
       },
@@ -289,7 +289,7 @@ recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Sucre en poudre",
+        ingredient: "Sucre en Poudre",
         quantity: "110",
         unit: "grammes",
       },
@@ -586,7 +586,7 @@ recipes = [
         unit: "tiges",
       },
       {
-        ingredient: "huile d'olive",
+        ingredient: "huile d'olives",
         quantity: 2,
         unit: "cuillère à soupe",
       },
@@ -766,7 +766,7 @@ recipes = [
     description:
       "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
     appliance: "Casserole",
-    ustensils: ["cuillère en bois", "louche", "couteau"],
+    ustensils: ["Cuillère en bois", "louche", "couteau"],
   },
   {
     id: 22,
@@ -829,7 +829,7 @@ recipes = [
         quantity: 3,
       },
       {
-        ingredient: "Crème fraîche",
+        ingredient: "Crème Fraîche",
         quantity: 20,
         unit: "cl",
       },
@@ -935,7 +935,7 @@ recipes = [
         quantity: 1,
       },
       {
-        ingredient: "Huile d'olive",
+        ingredient: "Huile d'olives",
       },
       {
         ingredient: "Oignon",
@@ -1115,7 +1115,7 @@ recipes = [
     description:
       "Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petit poids et les haricots verts ( tous deux pré cuits ). Ajouter Sel, poivre, thyms et laurier",
     appliance: "Poële",
-    ustensils: ["couteau", "économe"],
+    ustensils: ["Couteau", "économe"],
   },
   {
     id: 32,
@@ -1170,7 +1170,7 @@ recipes = [
         unit: "tranches",
       },
       {
-        ingredient: "Saumon fumé",
+        ingredient: "Saumon Fumé",
         quantity: 4,
         unit: "tranches",
       },
@@ -1319,7 +1319,7 @@ recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Huile d'olive",
+        ingredient: "Huile d'olives",
         quantity: 25,
         unit: "cl",
       },
@@ -1342,7 +1342,7 @@ recipes = [
     description:
       "Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
     appliance: "Four",
-    ustensils: ["couteau", "cuillère en bois", "poelle à frire"],
+    ustensils: ["couteau", "cuillère en bois", "Poelle à frire"],
   },
   {
     id: 38,
@@ -1373,7 +1373,7 @@ recipes = [
     description:
       "Fouettez les oeufs, le sucre et le lait. tremper les tranches de pain. Le cuire au four pendant environ 10 minutes à 180°. Servir",
     appliance: "Four",
-    ustensils: ["fouet", "bol", "Cuillère à soupe"],
+    ustensils: ["fouet", "bol", "Cuillère à Soupe"],
   },
   {
     id: 39,
@@ -1417,7 +1417,7 @@ recipes = [
         unit: "Litres",
       },
       {
-        ingredient: "Citron vert",
+        ingredient: "Citron Vert",
         quantity: 3,
       },
       {
@@ -1553,7 +1553,7 @@ recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Farine",
+        ingredient: "farine",
         quantity: 40,
         unit: "grammes",
       },
@@ -1657,7 +1657,7 @@ recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Crème fraîche",
+        ingredient: "Crème Fraîche",
         quantity: 20,
         unit: "cl",
       },
@@ -1706,7 +1706,7 @@ recipes = [
   },
   {
     id: 49,
-    name: "Smoothie Tropical",
+    name: "Smoothie tropical",
     servings: 4,
     ingredients: [
       {

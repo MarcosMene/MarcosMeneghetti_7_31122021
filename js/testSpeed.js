@@ -1781,10 +1781,10 @@ const inputValueTest = "coco";
 
 results = recipes.filter((obj) => {
   return (
-    obj.name.toLowerCase().includes(inputValueTest) ||
-    obj.description.toLowerCase().includes(inputValueTest) ||
+    obj.name.toLowerCase().find(inputValueTest) ||
+    obj.description.toLowerCase().find(inputValueTest) ||
     obj.ingredients.find((ingredient) =>
-      ingredient.ingredient.toLowerCase().includes(inputValueTest)
+      ingredient.ingredient.toLowerCase().find(inputValueTest)
     )
   );
 });
