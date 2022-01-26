@@ -12,8 +12,9 @@ function getElementsInRecipes(recipes, elementToGet) {
           list.push(...ingredientsMap);
         }
       });
-      listreduced = [...new Set(list)]; //remove repeated ingredients
-      return listreduced;
+      list = [...new Set(list)]; //remove repeated ingredients
+      console.log(listreduced);
+      return list;
 
     case "appliance":
       recipes.forEach((recipe) => {
@@ -22,8 +23,8 @@ function getElementsInRecipes(recipes, elementToGet) {
           list.push(applianceMap);
         }
       });
-      listreduced = [...new Set(list)]; //remove repeated appliance
-      return listreduced;
+      list = [...new Set(list)]; //remove repeated appliance
+      return list;
 
     case "ustensils":
       recipes.forEach((recipe) => {
@@ -32,8 +33,8 @@ function getElementsInRecipes(recipes, elementToGet) {
           list.push(...ustensilsMap);
         }
       });
-      listreduced = [...new Set(list)];
-      return listreduced;
+      list = [...new Set(list)];
+      return list;
   }
 }
 

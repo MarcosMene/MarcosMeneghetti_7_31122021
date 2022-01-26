@@ -41,6 +41,7 @@ function globalSearchInput(value) {
           )
         );
       });
+      console.log(results);
 
       createCardRecipesInput(results);
       updateListTags(results);

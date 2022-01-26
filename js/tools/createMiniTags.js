@@ -3,8 +3,15 @@
 // minitags
 //******** */
 let listMiniTags = [];
-
+let totalMiniTags = [];
 function createMiniTags() {
+  //recover all elements from miniTags
+
+  for (i = 0; i < listMiniTags.length; i++) {
+    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
+  }
+  totalMiniTags = [...new Set(totalMiniTags)];
+
   // ingredients
   const listItemIngredients = document.querySelectorAll(
     ".search-item-ingredients"
@@ -77,10 +84,12 @@ function createMiniTags() {
       removeMiniTag();
     });
   }
-  //recover all elements from miniTags
-  let totalMiniTags = [];
-  for (i = 0; i < listMiniTags.length; i++) {
-    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
-  }
-  console.log(totalMiniTags);
+
+  // //recover all elements from miniTags
+  // let totalMiniTags = [];
+  // for (i = 0; i < listMiniTags.length; i++) {
+  //   totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
+  // }
+  // console.log(totalMiniTags);
+  // console.log(resultRecipesMiniTags);
 }
