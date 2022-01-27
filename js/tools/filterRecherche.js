@@ -37,7 +37,7 @@ function globalSearchInput(value) {
       });
       console.log(results);
       createCardRecipesInput(results);
-      updateListTags(results);
+      populateTags(results);
       filterListTagsbyInputTag();
       createMiniTags();
     }
@@ -69,7 +69,7 @@ function globalSearchInput(value) {
 }
 
 // update ingredients-appareil-ustensils
-function updateListTags(results) {
+function populateTags(results) {
   // get ingredients from results recipes
   let ingredientsResult = [];
   let reducedIngredient = [];

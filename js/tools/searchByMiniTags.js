@@ -1,6 +1,14 @@
 let resultRecipesMiniTags = [];
-
+let totalRecipesMiniTags = [];
+let resultRecipesMultipleMiniTags = [];
 function searchByMiniTags(dataValue, value) {
+  //recover all elements from miniTags
+  for (i = 0; i < listMiniTags.length; i++) {
+    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
+  }
+  totalMiniTags = [...new Set(totalMiniTags)];
+  console.log(totalMiniTags);
+  console.log(listMiniTags);
   let valueLowCase = value.toLowerCase();
   switch (dataValue) {
     case "ingredients":
@@ -9,15 +17,21 @@ function searchByMiniTags(dataValue, value) {
           (ingredient) => ingredient.ingredient.toLowerCase() === valueLowCase
         )
       );
+      totalRecipesMiniTags.push(...resultRecipesMiniTags);
+
+      console.log(totalRecipesMiniTags);
       UpdateItemsFromMiniTags();
-      return resultRecipesMiniTags;
+      break;
 
     case "appliance":
       resultRecipesMiniTags = recipes.filter(
         (obj) => obj.appliance.toLowerCase() === valueLowCase
       );
+      totalRecipesMiniTags.push(...resultRecipesMiniTags);
+
+      console.log(totalRecipesMiniTags);
       UpdateItemsFromMiniTags();
-      return resultRecipesMiniTags;
+      break;
 
     case "ustensils":
       resultRecipesMiniTags = recipes.filter((obj) =>
@@ -25,8 +39,11 @@ function searchByMiniTags(dataValue, value) {
           (ustensil) => ustensil.toLowerCase() === valueLowCase
         )
       );
+      totalRecipesMiniTags.push(...resultRecipesMiniTags);
+
+      console.log(totalRecipesMiniTags);
       UpdateItemsFromMiniTags();
-      return resultRecipesMiniTags;
+      break;
   }
 }
 
@@ -91,8 +108,11 @@ function removeElementsFromListItems() {
 }
 
 function UpdateItemsFromMiniTags() {
-  if (totalMiniTags.length === 0) {
-    updateListTags(resultRecipesMiniTags);
+  totalRecipesMiniTags = [...new Set(totalRecipesMiniTags)];
+  console.log(totalMiniTags);
+  console.log(totalRecipesMiniTags);
+  if (totalMiniTags.length === 1) {
+    populateTags(resultRecipesMiniTags);
     filterListTagsbyInputTag();
     createMiniTags();
     createCardRecipesMiniTags(resultRecipesMiniTags);
@@ -101,9 +121,7 @@ function UpdateItemsFromMiniTags() {
     console.log(resultRecipesMiniTags);
   } else {
     totalMiniTags.forEach((item) => {
-      console.log(totalMiniTags);
-
-      let resultMultipleMiniTags = resultRecipesMiniTags.filter((obj) => {
+      totalRecipesMiniTags = totalRecipesMiniTags.filter((obj) => {
         return obj.ingredients.find(
           (ingredient) =>
             ingredient.ingredient.toLowerCase().includes(item) ||
@@ -113,11 +131,12 @@ function UpdateItemsFromMiniTags() {
             )
         );
       });
-      console.log(resultMultipleMiniTags);
-      updateListTags(resultMultipleMiniTags);
+      console.log(resultRecipesMultipleMiniTags);
+      console.log(totalRecipesMiniTags);
+      populateTags(totalRecipesMiniTags);
       filterListTagsbyInputTag();
       createMiniTags();
-      createCardRecipesMiniTags(resultMultipleMiniTags);
+      createCardRecipesMiniTags(totalRecipesMiniTags);
       removeElementsFromListItems();
       // console.log(totalMiniTags);
       // console.log(resultRecipesMiniTags);

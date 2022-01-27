@@ -98,10 +98,10 @@ Ustensils
       removeMiniTag();
     });
   }
-  //recover all elements from miniTags
-  for (i = 0; i < listMiniTags.length; i++) {
-    totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
-  }
-  totalMiniTags = [...new Set(totalMiniTags)];
-  console.log(totalMiniTags);
+  // //recover all elements from miniTags
+  // for (i = 0; i < listMiniTags.length; i++) {
+  //   totalMiniTags.push(listMiniTags[i].innerText.toLowerCase());
+  // }
+  // totalMiniTags = [...new Set(totalMiniTags)];
+  // console.log(totalMiniTags);
 }
