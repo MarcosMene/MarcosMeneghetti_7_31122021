@@ -167,6 +167,8 @@ function removeMiniTag() {
     item.addEventListener("click", () => {
       dataValueTag = item.getAttribute("datavalue", item);
       valueTag = item.innerText.toLowerCase();
+      console.log(dataValueTag);
+      console.log(valueTag);
       item.remove();
       removeMiniTag = document.querySelectorAll(".tag-button");
       if (removeMiniTag.length > 0) {

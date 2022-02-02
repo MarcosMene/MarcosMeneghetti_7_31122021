@@ -58,7 +58,7 @@ Ingredients
       const miniTagsChild = minitagsDOM(
         listItemAppliances[i].innerText.toLowerCase(),
         "success",
-        "appliances"
+        "appliance"
       );
 
       miniTags.appendChild(miniTagsChild);
