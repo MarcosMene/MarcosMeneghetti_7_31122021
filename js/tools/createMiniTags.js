@@ -19,7 +19,7 @@ Ingredients
 
   for (let i = 0; i < listItemIngredients.length; i++) {
     listItemIngredients[i].addEventListener("click", (e) => {
-      listItemIngredients[i].remove();
+      // listItemIngredients[i].remove();
       listMiniTags.push(listItemIngredients[i]);
 
       const miniTagsChild = minitagsDOM(
@@ -36,6 +36,7 @@ Ingredients
 
       // remove minitag on click
       removeMiniTag();
+      // updateMiniTags();
     });
   }
 
@@ -68,6 +69,7 @@ Ingredients
 
       // remove minitag on click
       removeMiniTag();
+      // updateMiniTags();
     });
   }
   /*
@@ -96,6 +98,7 @@ Ustensils
       );
       // remove minitag on click
       removeMiniTag();
+      // updateMiniTags();
     });
   }
   // //recover all elements from miniTags
