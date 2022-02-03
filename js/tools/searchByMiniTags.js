@@ -4,7 +4,8 @@ let totalRecipesMiniTags = [];
 let resultRecipesMultipleMiniTags = [];
 let uniqueValues = [];
 let FinalResultTotalMiniTags = [];
-let resultRecipes = [];
+let resultsRecipes = [];
+let totalMiniTags = [];
 function searchByMiniTags(dataValue, value) {
   //recover all elements from miniTags
   for (i = 0; i < listMiniTags.length; i++) {
@@ -167,48 +168,52 @@ function removeMiniTag() {
     item.addEventListener("click", () => {
       dataValueTag = item.getAttribute("datavalue", item);
       valueTag = item.innerText.toLowerCase();
-      console.log(dataValueTag);
-      console.log(valueTag);
+      //remove space at beginning and end
+      valueTag = valueTag.trim();
+      //remove minitag value from list of minitag list
+      FinalResultTotalMiniTags = FinalResultTotalMiniTags.filter(
+        (item) => item.value !== valueTag
+      );
+      console.log("-------------");
+      console.log(FinalResultTotalMiniTags);
       item.remove();
       removeMiniTag = document.querySelectorAll(".tag-button");
       if (removeMiniTag.length > 0) {
-        let clickedMiniTag = recipesWithRepetition.filter(
-          (element) => element === valueTag
-        );
-        console.log(...clickedMiniTag);
-
-        let intersectionRecipes = recipesWithRepetition.filter(
-          (valueTag) => !resultRecipesMiniTags.includes(valueTag)
-        );
-
-        totalRecipesMiniTags.push(...intersectionRecipes);
-        totalRecipesMiniTags = [...new Set(totalRecipesMiniTags)];
-        // totalRecipesMiniTags = [...new Set(intersection)];
-        console.log(intersectionRecipes);
         console.log(totalRecipesMiniTags);
+        console.log(resultRecipesMiniTags);
 
+        recipesWithRepetition = [...new Set(recipesWithRepetition)];
+
+        //remove repeated recipes from the list of minitags
+        totalRecipesMiniTags = [...new Set(recipesWithRepetition)];
+        console.log(totalRecipesMiniTags);
+        console.log("----------");
+        console.log(FinalResultTotalMiniTags);
+        console.log("----------");
         FinalResultTotalMiniTags.forEach((item) => {
-          totalRecipesMiniTags = totalRecipesMiniTags.filter((obj) => {
-            switch (dataValueTag) {
+          recipesWithRepetition = recipesWithRepetition.filter((obj) => {
+            switch (item.datavalue) {
               case "ingredients":
                 return obj.ingredients.find(
                   (ingredient) =>
-                    ingredient.ingredient.toLowerCase() !== item.valueTag
+                    ingredient.ingredient.toLowerCase() === item.value
                 );
               case "appliance":
-                return obj.appliance.toLowerCase() !== item.valueTag;
+                return obj.appliance.toLowerCase() === item.value;
               case "ustensils":
                 return obj.ustensils.find(
-                  (ustensil) => ustensil.toLowerCase() !== item.valueTag
+                  (ustensil) => ustensil.toLowerCase() === item.value
                 );
             }
           });
-          populateTags(totalRecipesMiniTags);
+
+          populateTags(recipesWithRepetition);
           filterListTagsbyInputTag();
           createMiniTags();
-          createCardRecipesMiniTags(totalRecipesMiniTags);
-          // removeElementsFromListItems();
+          createCardRecipesMiniTags(recipesWithRepetition);
+          removeElementsFromListItems();
         });
+        console.log(totalRecipesMiniTags);
         console.log(totalRecipesMiniTags);
       } else {
         resultsRecipes = recipes.filter((obj) => {
@@ -234,7 +239,7 @@ function removeMiniTag() {
         resultRecipesMultipleMiniTags = [];
         uniqueValues = [];
         FinalResultTotalMiniTags = [];
-        resultRecipes = [];
+        resultsRecipes = [];
         listMiniTags = [];
         listMiniTags = [];
         totalMiniTags = [];
@@ -246,7 +251,6 @@ function removeMiniTag() {
         reducedAppliance = [];
         ustensilsResult = [];
         reducedUstensils = [];
-        console.log(resultsRecipes);
       }
     });
   });

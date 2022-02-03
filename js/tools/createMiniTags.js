@@ -3,7 +3,7 @@
 // minitags
 //******** */
 let listMiniTags = [];
-let totalMiniTags = [];
+
 function createMiniTags() {
   /*
  *****
