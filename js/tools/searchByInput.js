@@ -35,7 +35,7 @@ function globalSearchInput(value) {
           )
         );
       });
-      console.log(results);
+      // console.log(results);
       createCardRecipesInput(results);
       populateTags(results);
       filterListTagsbyInputTag();

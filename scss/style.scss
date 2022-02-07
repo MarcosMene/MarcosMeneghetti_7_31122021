@@ -166,21 +166,29 @@ input {
 
 }
 
-.mini-tags {
+#mini-tags {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px // pointer-events: none;
 }
 
-.mini-tags .tag-button {
+#mini-tags .tag-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 45px;
+    // margin: 45px;
+    z-index: 200;
 
-    i {
-        z-index: 200;
-    }
+    // span {
+    //     pointer-events: none;
+    // }
+
+    // i {
+
+    //     pointer-events: none;
+    // }
 }
 
 .search-buttons {

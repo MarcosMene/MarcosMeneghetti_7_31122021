@@ -3,7 +3,7 @@ function minitagsDOM(value, color, type) {
   wrapper.setAttribute("type", "button");
   wrapper.setAttribute("datavalue", `${type}`);
   wrapper.classList.add("btn", `btn-${color}`, "text-white", "btn-sm");
-  wrapper.classList.add("px-3", "py-2", "me-3", "my-1");
+  wrapper.classList.add("px-3", "py-2");
   wrapper.classList.add("tag-button");
 
   let miniTagCard = "";

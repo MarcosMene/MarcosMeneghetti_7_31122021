@@ -1788,4 +1788,3 @@ results = recipes.filter((obj) => {
     )
   );
 });
-console.log(results);

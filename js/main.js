@@ -13,7 +13,7 @@ function getElementsInRecipes(recipes, elementToGet) {
         }
       });
       list = [...new Set(list)]; //remove repeated ingredients
-      console.log(listreduced);
+      // console.log(listreduced);
       return list;
 
     case "appliance":

@@ -11243,19 +11243,18 @@ input {
   color: rgba(0, 0, 0, 0.25);
 }
 
-.mini-tags {
+#mini-tags {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-.mini-tags .tag-button {
+#mini-tags .tag-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 45px;
-}
-.mini-tags .tag-button i {
   z-index: 200;
 }
 
