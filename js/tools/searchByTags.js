@@ -102,38 +102,36 @@ function removeElementsFromListItems() {
   // console.log(...finalResultTotalMiniTags);
   // console.log(...totalMiniTags);
   //remove element from the list of ingredients
-  const listItemIngredients = document.querySelectorAll(
-    ".search-item-ingredients"
-  );
-  for (i = 0; i < listItemIngredients.length; i++) {
+  const listAllItems = document.querySelectorAll(".search-item");
+  for (i = 0; i < listAllItems.length; i++) {
     for (j = 0; j < listMiniTags.length; j++) {
-      if (listItemIngredients[i].innerText === listMiniTags[j].innerText) {
-        listItemIngredients[i].remove();
+      if (listAllItems[i].innerText === listMiniTags[j].innerText) {
+        listAllItems[i].remove();
       }
     }
   }
 
-  //remove element from the list of appliance
-  const listItemAppliances = document.querySelectorAll(
-    ".search-item-appliances"
-  );
-  for (i = 0; i < listItemAppliances.length; i++) {
-    for (j = 0; j < listMiniTags.length; j++) {
-      if (listItemAppliances[i].innerText === listMiniTags[j].innerText) {
-        listItemAppliances[i].remove();
-      }
-    }
-  }
+  // //remove element from the list of appliance
+  // const listItemAppliances = document.querySelectorAll(
+  //   ".search-item-appliances"
+  // );
+  // for (i = 0; i < listItemAppliances.length; i++) {
+  //   for (j = 0; j < listMiniTags.length; j++) {
+  //     if (listItemAppliances[i].innerText === listMiniTags[j].innerText) {
+  //       listItemAppliances[i].remove();
+  //     }
+  //   }
+  // }
 
-  //remove element from the list of ustensils
-  const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
-  for (i = 0; i < listItemUstensils.length; i++) {
-    for (j = 0; j < listMiniTags.length; j++) {
-      if (listItemUstensils[i].innerText === listMiniTags[j].innerText) {
-        listItemUstensils[i].remove();
-      }
-    }
-  }
+  // //remove element from the list of ustensils
+  // const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
+  // for (i = 0; i < listItemUstensils.length; i++) {
+  //   for (j = 0; j < listMiniTags.length; j++) {
+  //     if (listItemUstensils[i].innerText === listMiniTags[j].innerText) {
+  //       listItemUstensils[i].remove();
+  //     }
+  //   }
+  // }
 }
 
 function UpdateItemsFromMiniTags() {
@@ -174,6 +172,7 @@ function removeMiniTag(item) {
   const clickedElementDataValue =
     clickedElementValue.parentElement.getAttribute("datavalue");
   const htmlElemToRemove = clickedElementValue.parentElement;
+
   htmlElemToRemove.remove();
 
   const pos = finalResultTotalMiniTags.findIndex(

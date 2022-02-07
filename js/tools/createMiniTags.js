@@ -39,7 +39,6 @@ Ingredients
       );
 
       // remove minitag on click
-
       // updateMiniTags();
     });
   }
