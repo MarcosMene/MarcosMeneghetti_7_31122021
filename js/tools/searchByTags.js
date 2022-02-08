@@ -193,7 +193,8 @@ function removeMiniTag(item) {
   }
   // console.log(...listMiniTags);
   // console.log(...finalResultTotalMiniTags);
-  let removeMiniTag = document.querySelectorAll(".tag-button");
+
+  const removeMiniTag = document.querySelectorAll(".tag-button");
   if (removeMiniTag.length === 0) {
     resultsRecipes = recipes;
 

@@ -171,7 +171,8 @@ input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px // pointer-events: none;
+    gap: 10px;
+    pointer-events: none;
 }
 
 #mini-tags .tag-button {
@@ -180,10 +181,11 @@ input {
     justify-content: center;
     // margin: 45px;
     z-index: 200;
+    pointer-events: none;
 
-    // span {
-    //     pointer-events: none;
-    // }
+    span {
+        pointer-events: auto;
+    }
 
     // i {
 
