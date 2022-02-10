@@ -2,33 +2,19 @@ function globalSearchInput(value) {
   value.addEventListener("input", (e) => {
     const inputResearch = document.getElementById("search");
     researchToLowerCase = inputResearch.value.toLowerCase();
-    //console.log(researchToLowerCase);
-    //all cards appears if input value <3
-    if (e.target.value.length < 3) {
-      const cardRecipe = document.querySelectorAll(".card-recipe");
-      if (cardRecipe.length) {
-        cardRecipe.forEach((element) => {
-          element.remove();
-        });
-      }
+    // console.log(researchToLowerCase);
+    // console.log(finalResultTotalMiniTags);
 
-      // call function create all card recipes for input <2
-      createCardRecipesInput(recipes);
+    // console.log(listMiniTags);
+    // console.log(finalResultTotalMiniTags);
+    // console.log(totalMiniTags);
+    // console.log(e.target.value.length);
 
-      // remove all items from the lists
-      const listAllItems = document.querySelectorAll(".search-item");
-      listAllItems.forEach((item) => {
-        item.remove();
-      });
-      CreateListElements();
-      filterListTagsbyInputTag();
-      createMiniTags();
-    }
-    //console.log(listMiniTags);
-    //console.log(finalResultTotalMiniTags);
+    //
     // filter inputs and minitags
-
+    //
     if (e.target.value.length > 2 && finalResultTotalMiniTags.length === 0) {
+      // console.log(e.target.value.length);
       results = recipes.filter((obj) => {
         return (
           obj.name.toLowerCase().includes(researchToLowerCase) ||
@@ -38,15 +24,17 @@ function globalSearchInput(value) {
           )
         );
       });
-      //console.log(results);
+      // console.log(results);
       createCardRecipesInput(results);
       populateTags(results);
       filterListTagsbyInputTag();
       createMiniTags();
     }
+
     if (e.target.value.length > 2 && finalResultTotalMiniTags.length > 0) {
-      //console.log("888888");
-      //console.log(researchToLowerCase.length);
+      // console.log(e.target.value.length);
+      // console.log("iiiiiiiii");
+      // console.log(researchToLowerCase.length);
       results = recipes.filter((obj) => {
         return (
           obj.name.toLowerCase().includes(researchToLowerCase) ||
@@ -56,9 +44,9 @@ function globalSearchInput(value) {
           )
         );
       });
-      //console.log(results);
+      // console.log(results);
 
-      //console.log(finalResultTotalMiniTags);
+      // console.log(finalResultTotalMiniTags);
 
       finalResultTotalMiniTags.forEach((item) => {
         results = results.filter((obj) => {
@@ -83,36 +71,77 @@ function globalSearchInput(value) {
         createCardRecipesMiniTags(results);
         removeElementsFromListItems();
       });
+    } else if (
+      e.target.value.length === 0 &&
+      finalResultTotalMiniTags.length > 0
+    ) {
+      // console.log(e.target.value.length);
+      UpdateItemsFromMiniTags();
+    } else if (
+      e.target.value.length === 0 &&
+      finalResultTotalMiniTags.length === 0
+    ) {
+      // console.log(e.target.value.length);
+      results = recipes;
+
+      populateTags(results);
+      filterListTagsbyInputTag();
+      createMiniTags();
+      createCardRecipesMiniTags(results);
+      resetAllArrays();
+      // console.log(results);
+      // console.log("000000000000000");
     }
-    if (e.target.value.length === 0 && finalResultTotalMiniTags.lenth > 0) {
+    //all cards appears if input value <3
+    else if (
+      e.target.value.length < 3 &&
+      finalResultTotalMiniTags.length === 0
+    ) {
+      const cardRecipe = document.querySelectorAll(".card-recipe");
+      if (cardRecipe.length) {
+        cardRecipe.forEach((element) => {
+          element.remove();
+        });
+      }
+
+      // call function create all card recipes for input <2
+      createCardRecipesInput(recipes);
+
+      // remove all items from the lists
+      const listAllItems = document.querySelectorAll(".search-item");
+      listAllItems.forEach((item) => {
+        item.remove();
+      });
+      CreateListElements();
+      filterListTagsbyInputTag();
+      createMiniTags();
     }
   });
-
-  function createCardRecipesInput(results) {
-    // show/hide message no recipes
-    const MessageNoRecette = document.querySelector(".message-no-recette");
-    if (results.length === 0) {
-      MessageNoRecette.style.display = "block";
-    } else {
-      MessageNoRecette.style.display = "none";
-    }
-
-    // delete all cards
-    const cardRecipe = document.querySelectorAll(".card-recipe");
-    cardRecipe.forEach((item) => {
-      item.remove();
-    });
-
-    // create new cards
-    const rowCardsRecipes = document.querySelector(".cards-recipes");
-    results.forEach((recipe) => {
-      const cardRecipeModel = cardsFactory(recipe);
-      const recipeCardDOM = cardRecipeModel.cardsRecipesDOM();
-      rowCardsRecipes.appendChild(recipeCardDOM);
-    });
-  }
 }
 
+function createCardRecipesInput(results) {
+  // show/hide message no recipes
+  const MessageNoRecette = document.querySelector(".message-no-recette");
+  if (results.length === 0) {
+    MessageNoRecette.style.display = "block";
+  } else {
+    MessageNoRecette.style.display = "none";
+  }
+
+  // delete all cards
+  const cardRecipe = document.querySelectorAll(".card-recipe");
+  cardRecipe.forEach((item) => {
+    item.remove();
+  });
+
+  // create new cards
+  const rowCardsRecipes = document.querySelector(".cards-recipes");
+  results.forEach((recipe) => {
+    const cardRecipeModel = cardsFactory(recipe);
+    const recipeCardDOM = cardRecipeModel.cardsRecipesDOM();
+    rowCardsRecipes.appendChild(recipeCardDOM);
+  });
+}
 // update ingredients-appareil-ustensils
 function populateTags(results) {
   // get ingredients from results recipes

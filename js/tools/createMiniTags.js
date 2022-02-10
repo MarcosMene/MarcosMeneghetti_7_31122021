@@ -78,7 +78,7 @@ Ustensils
   for (let i = 0; i < listItemUstensils.length; i++) {
     listItemUstensils[i].addEventListener("click", (e) => {
       listMiniTags.push(listItemUstensils[i]);
-      //console.log(listItemUstensils[i]);
+      // console.log(listItemUstensils[i]);
       const miniTagsChild = minitagsDOM(
         listItemUstensils[i].innerText.toLowerCase(),
         "danger",
@@ -88,7 +88,7 @@ Ustensils
         removeMiniTag(u);
       });
       miniTags.appendChild(miniTagsChild);
-      //console.log(miniTags);
+      // console.log(miniTags);
       searchByMiniTags(
         "ustensils",
         listItemUstensils[i].innerText.toLowerCase()
