@@ -3,6 +3,42 @@
 // import google fonts 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700&display=swap');
 
+// BREAKPOINTS
+
+$breakpoints: (mobile: 576px,
+    tablets: 768px,
+    desktop: 992px,
+    larger_desktop: 1200px,
+);
+
+@mixin mobile-only {
+    @media screen and (min-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablets-only {
+    @media screen and (min-width: map-get($breakpoints, tablets)) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin largerDesktop-only {
+    @media screen and (min-width: map-get($breakpoints, larger_desktop)) {
+        @content;
+    }
+}
+
+
+
+
+
 .show {
     display: inline;
 }
@@ -103,6 +139,31 @@ label {
 
     .card-body {
         height: 320px;
+
+        /*media query desktop*/
+        @include mobile-only {
+            height: 450px;
+
+        }
+
+        @include tablets-only {
+            height: 340px;
+
+        }
+
+        @include desktop-only {
+            height: 350px;
+
+        }
+
+        @include largerDesktop-only {
+            height: 320px;
+        }
+
+
+
+
+
 
 
         .card-recette {
@@ -279,6 +340,8 @@ input {
             max-height: 360px;
             overflow-y: auto;
             transition: width .2s ease-in-out;
+
+
         }
 
 

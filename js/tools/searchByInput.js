@@ -1,8 +1,8 @@
 function globalSearchInput(value) {
   value.addEventListener("input", (e) => {
     const inputResearch = document.getElementById("search");
-    let researchToLowerCase = inputResearch.value.toLowerCase();
-
+    researchToLowerCase = inputResearch.value.toLowerCase();
+    //console.log(researchToLowerCase);
     //all cards appears if input value <3
     if (e.target.value.length < 3) {
       const cardRecipe = document.querySelectorAll(".card-recipe");
@@ -24,9 +24,12 @@ function globalSearchInput(value) {
       filterListTagsbyInputTag();
       createMiniTags();
     }
-    //return values if input value > 2
-    if (e.target.value.length > 2) {
-      let results = recipes.filter((obj) => {
+    //console.log(listMiniTags);
+    //console.log(finalResultTotalMiniTags);
+    // filter inputs and minitags
+
+    if (e.target.value.length > 2 && finalResultTotalMiniTags.length === 0) {
+      results = recipes.filter((obj) => {
         return (
           obj.name.toLowerCase().includes(researchToLowerCase) ||
           obj.description.toLowerCase().includes(researchToLowerCase) ||
@@ -35,11 +38,53 @@ function globalSearchInput(value) {
           )
         );
       });
-      // console.log(results);
+      //console.log(results);
       createCardRecipesInput(results);
       populateTags(results);
       filterListTagsbyInputTag();
       createMiniTags();
+    }
+    if (e.target.value.length > 2 && finalResultTotalMiniTags.length > 0) {
+      //console.log("888888");
+      //console.log(researchToLowerCase.length);
+      results = recipes.filter((obj) => {
+        return (
+          obj.name.toLowerCase().includes(researchToLowerCase) ||
+          obj.description.toLowerCase().includes(researchToLowerCase) ||
+          obj.ingredients.find((ingredient) =>
+            ingredient.ingredient.toLowerCase().includes(researchToLowerCase)
+          )
+        );
+      });
+      //console.log(results);
+
+      //console.log(finalResultTotalMiniTags);
+
+      finalResultTotalMiniTags.forEach((item) => {
+        results = results.filter((obj) => {
+          switch (item.datavalue) {
+            case "ingredients":
+              return obj.ingredients.find(
+                (ingredient) =>
+                  ingredient.ingredient.toLowerCase() === item.value
+              );
+            case "appliance":
+              return obj.appliance.toLowerCase() === item.value;
+            case "ustensils":
+              return obj.ustensils.find(
+                (ustensil) => ustensil.toLowerCase() === item.value
+              );
+          }
+        });
+
+        populateTags(results);
+        filterListTagsbyInputTag();
+        createMiniTags();
+        createCardRecipesMiniTags(results);
+        removeElementsFromListItems();
+      });
+    }
+    if (e.target.value.length === 0 && finalResultTotalMiniTags.lenth > 0) {
     }
   });
 
@@ -124,9 +169,6 @@ function populateTags(results) {
   let reducedUstensils = [];
   results.forEach((recipe) => {
     if (recipe.ustensils.length) {
-      // for (u = 0; u < recipe.ustensils.length; u++) {
-      //   ustensilsResult.push(recipe.ustensils[u]);
-      // }
       recipe.ustensils.forEach((item) => {
         ustensilsResult.push(item.toLowerCase());
         reducedUstensils = [...new Set(ustensilsResult)]; //remove duplicates
