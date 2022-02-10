@@ -10,3 +10,4 @@ let resultsRecipes = [];
 let totalMiniTags = [];
 let researchToLowerCase;
 let mixAll;
+let valueLowCase;

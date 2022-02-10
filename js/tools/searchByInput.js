@@ -2,19 +2,19 @@ function globalSearchInput(value) {
   value.addEventListener("input", (e) => {
     const inputResearch = document.getElementById("search");
     researchToLowerCase = inputResearch.value.toLowerCase();
-    // console.log(researchToLowerCase);
-    // console.log(finalResultTotalMiniTags);
+    //console.log(researchToLowerCase);
+    //console.log(finalResultTotalMiniTags);
 
-    // console.log(listMiniTags);
-    // console.log(finalResultTotalMiniTags);
-    // console.log(totalMiniTags);
-    // console.log(e.target.value.length);
+    //console.log(listMiniTags);
+    //console.log(finalResultTotalMiniTags);
+    //console.log(totalMiniTags);
+    //console.log(e.target.value.length);
 
     //
     // filter inputs and minitags
     //
     if (e.target.value.length > 2 && finalResultTotalMiniTags.length === 0) {
-      // console.log(e.target.value.length);
+      //console.log(e.target.value.length);
       results = recipes.filter((obj) => {
         return (
           obj.name.toLowerCase().includes(researchToLowerCase) ||
@@ -24,17 +24,18 @@ function globalSearchInput(value) {
           )
         );
       });
-      // console.log(results);
+      //console.log(results);
       createCardRecipesInput(results);
       populateTags(results);
       filterListTagsbyInputTag();
       createMiniTags();
-    }
-
-    if (e.target.value.length > 2 && finalResultTotalMiniTags.length > 0) {
-      // console.log(e.target.value.length);
-      // console.log("iiiiiiiii");
-      // console.log(researchToLowerCase.length);
+    } else if (
+      e.target.value.length > 2 &&
+      finalResultTotalMiniTags.length > 0
+    ) {
+      //console.log(e.target.value.length);
+      //console.log("iiiiiiiii");
+      //console.log(researchToLowerCase.length);
       results = recipes.filter((obj) => {
         return (
           obj.name.toLowerCase().includes(researchToLowerCase) ||
@@ -44,9 +45,10 @@ function globalSearchInput(value) {
           )
         );
       });
-      // console.log(results);
+      //console.log(results);
 
-      // console.log(finalResultTotalMiniTags);
+      //console.log(finalResultTotalMiniTags);
+      //console.log(totalMiniTags);
 
       finalResultTotalMiniTags.forEach((item) => {
         results = results.filter((obj) => {
@@ -75,13 +77,13 @@ function globalSearchInput(value) {
       e.target.value.length === 0 &&
       finalResultTotalMiniTags.length > 0
     ) {
-      // console.log(e.target.value.length);
+      //console.log(e.target.value.length);
       UpdateItemsFromMiniTags();
     } else if (
       e.target.value.length === 0 &&
       finalResultTotalMiniTags.length === 0
     ) {
-      // console.log(e.target.value.length);
+      //console.log(e.target.value.length);
       results = recipes;
 
       populateTags(results);
@@ -89,8 +91,8 @@ function globalSearchInput(value) {
       createMiniTags();
       createCardRecipesMiniTags(results);
       resetAllArrays();
-      // console.log(results);
-      // console.log("000000000000000");
+      //console.log(results);
+      //console.log("000000000000000");
     }
     //all cards appears if input value <3
     else if (
