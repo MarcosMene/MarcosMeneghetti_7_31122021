@@ -30,6 +30,8 @@ function searchByMiniTags(dataValue, value) {
 
   //filter inputs and minitags
   researchToLowerCase = inputResearch.value.toLowerCase();
+
+  //filter input and minitags
   if (finalResultTotalMiniTags.length > 0 && researchToLowerCase.length === 0) {
     switch (dataValue) {
       case "ingredients":

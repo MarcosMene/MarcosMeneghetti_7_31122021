@@ -77,8 +77,29 @@ function globalSearchInput(value) {
       e.target.value.length === 0 &&
       finalResultTotalMiniTags.length > 0
     ) {
-      //console.log(e.target.value.length);
-      UpdateItemsFromMiniTags();
+      finalResultTotalMiniTags.forEach((item) => {
+        resultRecipesMiniTags = recipes.filter((obj) => {
+          switch (item.datavalue) {
+            case "ingredients":
+              return obj.ingredients.find(
+                (ingredient) =>
+                  ingredient.ingredient.toLowerCase() === item.value
+              );
+            case "appliance":
+              return obj.appliance.toLowerCase() === item.value;
+            case "ustensils":
+              return obj.ustensils.find(
+                (ustensil) => ustensil.toLowerCase() === item.value
+              );
+          }
+        });
+
+        populateTags(resultRecipesMiniTags);
+        filterListTagsbyInputTag();
+        createMiniTags();
+        createCardRecipesMiniTags(resultRecipesMiniTags);
+        removeElementsFromListItems();
+      });
     } else if (
       e.target.value.length === 0 &&
       finalResultTotalMiniTags.length === 0
