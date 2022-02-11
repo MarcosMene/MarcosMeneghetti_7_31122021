@@ -1,17 +1,16 @@
 function minitagsDOM(value, color, type) {
   const wrapper = document.createElement("button");
+
   wrapper.setAttribute("type", "button");
   wrapper.setAttribute("datavalue", `${type}`);
   wrapper.classList.add("btn", `btn-${color}`, "text-white", "btn-sm");
-  wrapper.classList.add("px-3", "py-2");
+  wrapper.classList.add("ps-3", "py-2");
   wrapper.classList.add("tag-button");
 
   let miniTagCard = "";
   miniTagCard += `
   
-  <span class="mx-2 d-inline">${
-    value.charAt(0).toUpperCase() + value.slice(1)
-  }</span>
+  ${value.charAt(0).toUpperCase() + value.slice(1)}
   <i class="far fa-times-circle fa-lg close-tag"></i>
 
     `;

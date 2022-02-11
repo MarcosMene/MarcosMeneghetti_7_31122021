@@ -1,14 +1,12 @@
 //******** */
-// Create
-// minitags
+// *Create
+// *minitags
 //******** */
 
 function createMiniTags() {
-  /*
- *****
-Ingredients
- ****
- */
+  //******** */
+  //*Ingredients
+  //******** */
 
   const miniTags = document.querySelector("#mini-tags");
 
@@ -38,11 +36,9 @@ Ingredients
     });
   }
 
-  /*
- *****
- Appliances
- ****
- */
+  //******** */
+  //* Appliances
+  //******** */
   const listItemAppliances = document.querySelectorAll(
     ".search-item-appliances"
   );
@@ -68,11 +64,9 @@ Ingredients
       );
     });
   }
-  /*
- *****
-Ustensils
- ****
- */
+  //******** */
+  //*Ustensils
+  //******** */
   const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
   for (let i = 0; i < listItemUstensils.length; i++) {

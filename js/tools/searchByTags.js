@@ -21,6 +21,7 @@ function searchByMiniTags(dataValue, value) {
   //console.log(uniqueValues);
   //console.log(totalMiniTags);
   //console.log(finalResultTotalMiniTags);
+  //console.log(totalRecipesMiniTags);
 
   //console.log(listMiniTags);
   // finalResultTotalMiniTags = [...new Set(finalResultTotalMiniTags)];
@@ -33,6 +34,7 @@ function searchByMiniTags(dataValue, value) {
 
   //filter input and minitags
   if (finalResultTotalMiniTags.length > 0 && researchToLowerCase.length === 0) {
+    //console.log(totalRecipesMiniTags);
     switch (dataValue) {
       case "ingredients":
         resultRecipesMiniTags = recipes.filter((obj) =>
@@ -44,6 +46,7 @@ function searchByMiniTags(dataValue, value) {
 
         //console.log(recipesWithRepetition);
         //console.log(resultRecipesMiniTags);
+        //console.log(totalRecipesMiniTags);
         UpdateItemsFromMiniTags();
         break;
 
@@ -66,6 +69,7 @@ function searchByMiniTags(dataValue, value) {
         recipesWithRepetition.push(...resultRecipesMiniTags);
 
         //console.log(recipesWithRepetition);
+        //console.log(totalRecipesMiniTags);
         UpdateItemsFromMiniTags();
         break;
     }
@@ -156,7 +160,7 @@ function searchByMiniTags(dataValue, value) {
     createMiniTags();
     createCardRecipesMiniTags(results);
     removeElementsFromListItems();
-    resetAllArrays();
+    // resetAllArrays();
   }
 }
 
@@ -252,10 +256,15 @@ function UpdateItemsFromMiniTags() {
 function removeMiniTag(item) {
   //console.log(item.value);
   const clickedElementValue = item.target || item.srcElement;
-  const clickedElementValueLower = clickedElementValue.innerText.toLowerCase();
+  const clickedElementValueLower =
+    clickedElementValue.parentElement.innerText.toLowerCase();
   const clickedElementDataValue =
     clickedElementValue.parentElement.getAttribute("datavalue");
   const htmlElemToRemove = clickedElementValue.parentElement;
+  //console.log(clickedElementValue);
+  //console.log(clickedElementValueLower);
+  //console.log(clickedElementDataValue);
+  //console.log(htmlElemToRemove);
 
   htmlElemToRemove.remove();
 
@@ -276,7 +285,7 @@ function removeMiniTag(item) {
 
   const inputResearch = document.getElementById("search");
   let researchToLowerCase = inputResearch.value.toLowerCase();
-  const removeMiniTag = document.querySelectorAll(".tag-button");
+  // const removeMiniTag = document.querySelectorAll(".tag-button");
   //console.log(removeMiniTag.length);
   //console.log(finalResultTotalMiniTags);
 
@@ -376,6 +385,43 @@ function removeMiniTag(item) {
     //console.log(totalMiniTags);
     //console.log(finalResultTotalMiniTags);
     //console.log(">0=0");
-    UpdateItemsFromMiniTags();
+    // UpdateItemsFromMiniTags();
+    results = recipes.filter((obj) => {
+      return (
+        obj.name.toLowerCase().includes(researchToLowerCase) ||
+        obj.description.toLowerCase().includes(researchToLowerCase) ||
+        obj.ingredients.find((ingredient) =>
+          ingredient.ingredient.toLowerCase().includes(researchToLowerCase)
+        )
+      );
+    });
+    //console.log(results);
+
+    //console.log(finalResultTotalMiniTags);
+    //console.log(totalMiniTags);
+
+    finalResultTotalMiniTags.forEach((item) => {
+      results = results.filter((obj) => {
+        switch (item.datavalue) {
+          case "ingredients":
+            return obj.ingredients.find(
+              (ingredient) => ingredient.ingredient.toLowerCase() === item.value
+            );
+          case "appliance":
+            return obj.appliance.toLowerCase() === item.value;
+          case "ustensils":
+            return obj.ustensils.find(
+              (ustensil) => ustensil.toLowerCase() === item.value
+            );
+        }
+      });
+
+      populateTags(results);
+      filterListTagsbyInputTag();
+      createMiniTags();
+      createCardRecipesMiniTags(results);
+      removeElementsFromListItems();
+      // resetAllArrays();
+    });
   }
 }

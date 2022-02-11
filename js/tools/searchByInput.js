@@ -8,6 +8,7 @@ function globalSearchInput(value) {
     //console.log(listMiniTags);
     //console.log(finalResultTotalMiniTags);
     //console.log(totalMiniTags);
+    //console.log(totalRecipesMiniTags);
     //console.log(e.target.value.length);
 
     //
@@ -77,8 +78,29 @@ function globalSearchInput(value) {
       e.target.value.length === 0 &&
       finalResultTotalMiniTags.length > 0
     ) {
+      //console.log("uuuuuuuuuuuuuuuuu");
+      //console.log(finalResultTotalMiniTags);
+      //console.log(totalRecipesMiniTags);
+      //console.log(results);
+      //console.log(resultRecipesMiniTags);
+      //console.log(totalRecipesMiniTags);
+
+      results = recipes.filter((obj) => {
+        return (
+          obj.name.toLowerCase().includes(researchToLowerCase) ||
+          obj.description.toLowerCase().includes(researchToLowerCase) ||
+          obj.ingredients.find((ingredient) =>
+            ingredient.ingredient.toLowerCase().includes(researchToLowerCase)
+          )
+        );
+      });
+      //console.log(results);
+
+      //console.log(finalResultTotalMiniTags);
+      //console.log(totalMiniTags);
+
       finalResultTotalMiniTags.forEach((item) => {
-        resultRecipesMiniTags = recipes.filter((obj) => {
+        results = results.filter((obj) => {
           switch (item.datavalue) {
             case "ingredients":
               return obj.ingredients.find(
@@ -94,11 +116,12 @@ function globalSearchInput(value) {
           }
         });
 
-        populateTags(resultRecipesMiniTags);
+        populateTags(results);
         filterListTagsbyInputTag();
         createMiniTags();
-        createCardRecipesMiniTags(resultRecipesMiniTags);
+        createCardRecipesMiniTags(results);
         removeElementsFromListItems();
+        // resetAllArrays();
       });
     } else if (
       e.target.value.length === 0 &&

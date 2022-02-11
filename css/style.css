@@ -11270,7 +11270,6 @@ input {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  pointer-events: none;
 }
 
 #mini-tags .tag-button {
@@ -11280,8 +11279,9 @@ input {
   z-index: 200;
   pointer-events: none;
 }
-#mini-tags .tag-button span {
+#mini-tags .tag-button i {
   pointer-events: auto;
+  padding: 10px;
 }
 
 .search-buttons {
