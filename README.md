@@ -1,8 +1,8 @@
 # Projet 7 - Les petits plats
 
-## La demo du projet
+<!-- ## La demo du projet
 
-https://marcosmene.github.io/MarcosMeneghetti_7_31122021/
+https://marcosmene.github.io/MarcosMeneghetti_7_31122021/ -->
 
 ## Scénario
 
