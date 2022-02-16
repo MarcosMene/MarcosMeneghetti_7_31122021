@@ -1,3 +1,4 @@
+//reset all arrays
 let listMiniTags = [];
 let results = [];
 let resultRecipesMiniTags = [];

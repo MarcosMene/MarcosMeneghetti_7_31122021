@@ -1,7 +1,6 @@
 // get all elements to create tag lists ingredients/appliance/ustensils
 function getElementsInRecipes(recipes, elementToGet) {
   let list = [];
-  let listreduced = [];
   switch (elementToGet) {
     case "ingredients":
       recipes.forEach((recipe) => {
@@ -13,7 +12,6 @@ function getElementsInRecipes(recipes, elementToGet) {
         }
       });
       list = [...new Set(list)]; //remove repeated ingredients
-      //console.log(listreduced);
       return list;
 
     case "appliance":
@@ -40,11 +38,10 @@ function getElementsInRecipes(recipes, elementToGet) {
 
 //create list elements for ingredients/appliances/ustensils
 function CreateListElements() {
-  //******** */
   //  Create list
   //  elements for
   //  ingredients
-  //******** */
+
   const myIngredientsTags = getElementsInRecipes(recipes, "ingredients");
   myIngredientsTags.forEach((element) => {
     const searchlistIngredients = document.querySelector(
@@ -54,11 +51,9 @@ function CreateListElements() {
     searchlistIngredients.append(domIngredients);
   });
 
-  //******** */
   // Create
   // list elements
   //  for appliance
-  //******** */
 
   let myappliancesTags = getElementsInRecipes(recipes, "appliance");
   myappliancesTags.forEach((element) => {
@@ -69,11 +64,9 @@ function CreateListElements() {
     searchListappliances.append(domAppliance);
   });
 
-  //******** */
   // Create list
   // elements for
   // ustensils
-  //******** */
 
   const myUstensilsTags = getElementsInRecipes(recipes, "ustensils");
   myUstensilsTags.forEach((element) => {
@@ -85,11 +78,10 @@ function CreateListElements() {
   });
 }
 
-//******** */
 //Create
 //Cards
 //recettes
-//******** */
+
 function createCardRecipes() {
   const rowCardsRecipes = document.querySelector(".cards-recipes");
 

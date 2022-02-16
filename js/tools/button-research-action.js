@@ -54,9 +54,11 @@ document.addEventListener("click", (evt) => {
     if (targetEl == searchIngredients) {
       return;
     }
+
     // Go up the DOM ingredients
     targetEl = targetEl.parentNode;
   } while (targetEl);
+
   // click outside ingredients
   searchIngredientsInput.classList.add("hide");
   searchIngredientsInput.value = "";
@@ -133,9 +135,11 @@ document.addEventListener("click", (evt) => {
     if (targetEl == searchappliances) {
       return;
     }
+
     // Go up the DOM Appareil
     targetEl = targetEl.parentNode;
   } while (targetEl);
+
   // click outside Appareil
   searchappliancesInput.classList.add("hide");
   searchappliancesInput.value = "";
@@ -216,6 +220,7 @@ document.addEventListener("click", (evt) => {
     // Go up the DOM Ustensils
     targetEl = targetEl.parentNode;
   } while (targetEl);
+
   // click outside Ustensils
   searchUstensilsInput.classList.add("hide");
   searchUstensilsInput.value = "";

@@ -35,10 +35,7 @@ $breakpoints: (mobile: 576px,
     }
 }
 
-
-
-
-
+//general elements
 .show {
     display: inline;
 }
@@ -51,25 +48,9 @@ $breakpoints: (mobile: 576px,
     width: 500px;
 }
 
-// .height-auto {
-//     height: auto;
-// }
-
-
-// .disable-button {
-//     pointer-events: none;
-// }
-
-
 .rotated {
     transform: rotate(180deg);
 }
-
-
-
-
-
-
 
 h1 {
     font-family: "DM Sans", sans-serif;
@@ -86,7 +67,6 @@ label {
     font-family: "Lato";
     font-size: 18px;
 }
-
 
 
 .card {
@@ -160,12 +140,6 @@ label {
             height: 320px;
         }
 
-
-
-
-
-
-
         .card-recette {
             height: 80%;
         }
@@ -182,7 +156,6 @@ label {
             text-justify: inter-word;
             height: 100%;
 
-
             p {
                 overflow: hidden;
                 display: -webkit-box;
@@ -190,13 +163,9 @@ label {
                 text-overflow: ellipsis;
                 -webkit-line-clamp: 10;
             }
-
         }
-
     }
-
 }
-
 
 
 #search {
@@ -218,13 +187,8 @@ input {
     margin-right: 2rem;
 }
 
-// .dropdown-menu {
-//     width: 500px;
-// }
-
 #search::placeholder {
     color: rgba(0, 0, 0, 0.25);
-
 }
 
 #mini-tags {
@@ -233,22 +197,17 @@ input {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    // pointer-events: none;
 }
 
 #mini-tags .tag-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    // margin: 45px;
     z-index: 200;
     pointer-events: none;
 
-
-
     i {
         pointer-events: auto;
-        // margin-left: 20px;
         padding: 10px;
     }
 }
@@ -257,8 +216,6 @@ input {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
-
 
     .search-wrapper-ingredients,
     .search-wrapper-appliances,
@@ -273,7 +230,6 @@ input {
         transition: width .2s ease-in-out;
 
 
-
         .search-control-ingredients,
         .search-control-appliances,
         .search-control-ustensils {
@@ -282,13 +238,11 @@ input {
             justify-content: space-around;
             width: 100%;
             padding: 15px;
-
         }
 
         .close-dropdown-ingredients,
         .close-dropdown-appliances,
         .close-dropdown-ustensils {
-
             transition: all .2s ease-in-out;
             margin: 0 10px;
             z-index: 600;
@@ -300,7 +254,6 @@ input {
         .appliances-text,
         .ustensils-text {
             pointer-events: none;
-
         }
 
         input {
@@ -310,8 +263,6 @@ input {
             border: none;
             color: #fff;
         }
-
-
 
         .search-list-block-ingredients {
             background-color: $primary;
@@ -325,8 +276,6 @@ input {
             background-color: $danger;
         }
 
-
-
         .search-list-block-ingredients,
         .search-list-block-appliances,
         .search-list-block-ustensils {
@@ -339,28 +288,21 @@ input {
             max-height: 360px;
             overflow-y: auto;
             transition: width .2s ease-in-out;
-
-
         }
-
 
         .search-list-block-ingredients {
             scrollbar-color: darken($primary, 30%) $primary;
             scrollbar-width: thin;
         }
 
-
         .search-list-block-appliances {
             scrollbar-color: darken($success, 30%) $success;
             scrollbar-width: thin;
-
         }
-
 
         .search-list-block-ustensils {
             scrollbar-color: darken($danger, 30%) $danger;
             scrollbar-width: thin;
-
         }
 
         .search-list-ingredients,
@@ -380,19 +322,14 @@ input {
             list-style: none;
             padding: 0px;
 
-
-
             li {
                 margin: 10px;
                 margin-bottom: 10px;
                 display: inline;
                 cursor: pointer;
             }
-
         }
-
     }
-
 }
 
 .message-no-recette {

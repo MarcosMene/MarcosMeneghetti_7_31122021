@@ -1,13 +1,12 @@
-//******** */
-// *Create
-// *minitags
-//******** */
+//
+// Create
+// minitags
+//
 
 function createMiniTags() {
-  //******** */
-  //*Ingredients
-  //******** */
-
+  //
+  //Ingredients
+  //
   const miniTags = document.querySelector("#mini-tags");
 
   const listItemIngredients = document.querySelectorAll(
@@ -36,9 +35,10 @@ function createMiniTags() {
     });
   }
 
-  //******** */
-  //* Appliances
-  //******** */
+  //
+  // Appliances
+  //
+
   const listItemAppliances = document.querySelectorAll(
     ".search-item-appliances"
   );
@@ -64,15 +64,16 @@ function createMiniTags() {
       );
     });
   }
-  //******** */
-  //*Ustensils
-  //******** */
+
+  //
+  //Ustensils
+  //
+
   const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
   for (let i = 0; i < listItemUstensils.length; i++) {
     listItemUstensils[i].addEventListener("click", (e) => {
       listMiniTags.push(listItemUstensils[i]);
-      //console.log(listItemUstensils[i]);
       const miniTagsChild = minitagsDOM(
         listItemUstensils[i].innerText.toLowerCase(),
         "danger",
@@ -82,7 +83,6 @@ function createMiniTags() {
         removeMiniTag(u);
       });
       miniTags.appendChild(miniTagsChild);
-      //console.log(miniTags);
       searchByMiniTags(
         "ustensils",
         listItemUstensils[i].innerText.toLowerCase()
