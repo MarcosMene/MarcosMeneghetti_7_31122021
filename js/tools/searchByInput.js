@@ -1,6 +1,7 @@
+const inputResearch = document.getElementById("search");
+
 function globalSearchInput(value) {
   value.addEventListener("input", (e) => {
-    const inputResearch = document.getElementById("search");
     researchToLowerCase = inputResearch.value.toLowerCase();
 
     //
@@ -227,5 +228,4 @@ function populateTags(results) {
   });
 }
 
-const inputResearch = document.getElementById("search");
 globalSearchInput(inputResearch);

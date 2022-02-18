@@ -1,14 +1,13 @@
+const miniTags = document.querySelector("#mini-tags");
+
 //
 // Create
 // minitags
 //
-
 function createMiniTags() {
   //
   //Ingredients
   //
-  const miniTags = document.querySelector("#mini-tags");
-
   const listItemIngredients = document.querySelectorAll(
     ".search-item-ingredients"
   );
@@ -38,7 +37,6 @@ function createMiniTags() {
   //
   // Appliances
   //
-
   const listItemAppliances = document.querySelectorAll(
     ".search-item-appliances"
   );
@@ -68,7 +66,6 @@ function createMiniTags() {
   //
   //Ustensils
   //
-
   const listItemUstensils = document.querySelectorAll(".search-item-ustensils");
 
   for (let i = 0; i < listItemUstensils.length; i++) {

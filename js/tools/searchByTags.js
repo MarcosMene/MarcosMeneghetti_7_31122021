@@ -1,14 +1,12 @@
+const MessageNoRecette = document.querySelector(".message-no-recette");
+
 function searchByMiniTags(dataValue, value) {
   //recover all elements from miniTags
   for (i = 0; i < listMiniTags.length; i++) {
-    totalMiniTags.push(
-      ...[
-        {
-          datavalue: dataValue,
-          value: listMiniTags[i].innerText.toLowerCase(),
-        },
-      ]
-    );
+    totalMiniTags.push({
+      datavalue: dataValue,
+      value: listMiniTags[i].innerText.toLowerCase(),
+    });
   }
   //remove repeated element from de list minitags
   function getUniqueListBy(arr, key) {
@@ -19,7 +17,7 @@ function searchByMiniTags(dataValue, value) {
   finalResultTotalMiniTags.push(...totalMiniTags);
 
   let valueLowCase = value.toLowerCase();
-  const inputResearch = document.getElementById("search");
+  // const inputResearch = document.getElementById("search");
 
   //filter inputs and minitags
   researchToLowerCase = inputResearch.value.toLowerCase();
@@ -125,7 +123,7 @@ function searchByMiniTags(dataValue, value) {
 
 function createCardRecipesMiniTags(results) {
   // show/hide message no recipes
-  const MessageNoRecette = document.querySelector(".message-no-recette");
+
   if (results.length === 0) {
     MessageNoRecette.style.display = "block";
   } else {
@@ -181,6 +179,31 @@ function resetAllArrays() {
   reducedUstensils = [];
 }
 
+function finalResultTotalMiniTagsForEach() {
+  finalResultTotalMiniTags.forEach((item) => {
+    results = results.filter((obj) => {
+      switch (item.datavalue) {
+        case "ingredients":
+          return obj.ingredients.find(
+            (ingredient) => ingredient.ingredient.toLowerCase() === item.value
+          );
+        case "appliance":
+          return obj.appliance.toLowerCase() === item.value;
+        case "ustensils":
+          return obj.ustensils.find(
+            (ustensil) => ustensil.toLowerCase() === item.value
+          );
+      }
+    });
+
+    populateTags(results);
+    filterListTagsbyInputTag();
+    createMiniTags();
+    createCardRecipesMiniTags(results);
+    removeElementsFromListItems();
+  });
+}
+
 function UpdateItemsFromMiniTags() {
   //remove repeated recipes from the list of minitags
   totalRecipesMiniTags = [...new Set(recipesWithRepetition)];
@@ -231,7 +254,6 @@ function removeMiniTag(item) {
     }
   }
 
-  const inputResearch = document.getElementById("search");
   let researchToLowerCase = inputResearch.value.toLowerCase();
 
   //
@@ -267,29 +289,7 @@ function removeMiniTag(item) {
         )
       );
     });
-
-    finalResultTotalMiniTags.forEach((item) => {
-      results = results.filter((obj) => {
-        switch (item.datavalue) {
-          case "ingredients":
-            return obj.ingredients.find(
-              (ingredient) => ingredient.ingredient.toLowerCase() === item.value
-            );
-          case "appliance":
-            return obj.appliance.toLowerCase() === item.value;
-          case "ustensils":
-            return obj.ustensils.find(
-              (ustensil) => ustensil.toLowerCase() === item.value
-            );
-        }
-      });
-
-      populateTags(results);
-      filterListTagsbyInputTag();
-      createMiniTags();
-      createCardRecipesMiniTags(results);
-      removeElementsFromListItems();
-    });
+    finalResultTotalMiniTagsForEach();
   } else if (
     finalResultTotalMiniTags.length === 0 &&
     researchToLowerCase.length === 0
@@ -313,28 +313,6 @@ function removeMiniTag(item) {
         )
       );
     });
-
-    finalResultTotalMiniTags.forEach((item) => {
-      results = results.filter((obj) => {
-        switch (item.datavalue) {
-          case "ingredients":
-            return obj.ingredients.find(
-              (ingredient) => ingredient.ingredient.toLowerCase() === item.value
-            );
-          case "appliance":
-            return obj.appliance.toLowerCase() === item.value;
-          case "ustensils":
-            return obj.ustensils.find(
-              (ustensil) => ustensil.toLowerCase() === item.value
-            );
-        }
-      });
-
-      populateTags(results);
-      filterListTagsbyInputTag();
-      createMiniTags();
-      createCardRecipesMiniTags(results);
-      removeElementsFromListItems();
-    });
+    finalResultTotalMiniTagsForEach();
   }
 }

@@ -167,7 +167,7 @@ label {
     }
 }
 
-
+//search input main
 #search {
     background-image: url(../assets/images/lupe.png);
     background-position: 99%;
@@ -191,6 +191,8 @@ input {
     color: rgba(0, 0, 0, 0.25);
 }
 
+
+//mini tags
 #mini-tags {
     display: flex;
     flex-wrap: wrap;
@@ -332,6 +334,7 @@ input {
     }
 }
 
+//display no message if no recipes
 .message-no-recette {
     margin-top: 20px;
     display: none;
