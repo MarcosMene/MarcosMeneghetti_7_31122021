@@ -11349,7 +11349,31 @@ input {
   width: 100px;
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: #e7e7e7;
+}
+.search-buttons .search-wrapper-ingredients input::-webkit-input-placeholder,
+.search-buttons .search-wrapper-appliances input::-webkit-input-placeholder,
+.search-buttons .search-wrapper-ustensils input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ebebeb;
+}
+.search-buttons .search-wrapper-ingredients input::-moz-placeholder,
+.search-buttons .search-wrapper-appliances input::-moz-placeholder,
+.search-buttons .search-wrapper-ustensils input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #f7f7f7;
+}
+.search-buttons .search-wrapper-ingredients input:-ms-input-placeholder,
+.search-buttons .search-wrapper-appliances input:-ms-input-placeholder,
+.search-buttons .search-wrapper-ustensils input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #e7e7e7;
+}
+.search-buttons .search-wrapper-ingredients input:-moz-placeholder,
+.search-buttons .search-wrapper-appliances input:-moz-placeholder,
+.search-buttons .search-wrapper-ustensils input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #f7f7f7;
 }
 .search-buttons .search-wrapper-ingredients .search-list-block-ingredients,
 .search-buttons .search-wrapper-appliances .search-list-block-ingredients,
